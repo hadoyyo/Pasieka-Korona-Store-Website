@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pasieka Korona</title>
+        <!-- icon-->
+        <link rel="shortcut icon" href="images/mini-logo.png">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Logo" width="120">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="shop.html">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">O nas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="button" onclick="location.href='cart.html'">
+                            <i class="bi-cart-fill me-1"></i>
+                            Koszyk
+                            <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartCount"></span>
+                        </button> 
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5 header-bg">
+            <div class="container px-4 px-lg-5 my-5 pt-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Sklep</h1>
+                    <p class="lead fw-normal text-white-70 mb-0">Zapraszamy do zapoznania się z ofertą<br> produktów pszczelich z naszej pasieki</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód gryczany mały" data-article-price="25" data-article-weight="450 g" data-article-description="Charakterystyczny smak i zapach sprawiają, że jest to miód, który cieszy się ogromną popularnością. Z uwagi na swoje właściwości, jest chętnie wybierany przez osoby, które pragną naturalnie wzmocnić swoją odporność." data-article-image="images/mini-products/gryczany-m-min.png">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-warning text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Nowość</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/gryczany-m-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód gryczany mały</h5><br>
+                                    <!-- Product price-->
+                                    25 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód gryczany" data-article-price="50" data-article-weight="1,2 kg" data-article-description="Charakterystyczny smak i zapach sprawiają, że jest to miód, który cieszy się ogromną popularnością. Z uwagi na swoje właściwości, jest chętnie wybierany przez osoby, które pragną naturalnie wzmocnić swoją odporność." data-article-image="images/mini-products/gryczany-min.png">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-warning text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Nowość</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/gryczany-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód gryczany</h5><br>
+                                    <!-- Product price-->
+                                    50 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód lipowy mały" data-article-price="20" data-article-weight="450 g" data-article-description="Miód z nektaru kwiatu lipy o charakterystycznym piekącym smaku oraz silnym aromacie kwiatu lipy. Szczególnie polecany w czasie przeziębień oraz chorób górnych dróg oddechowych." data-article-image="images/mini-products/lipowy-p-m-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/lipowy-p-m-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód lipowy mały</h5><br>
+                                    <!-- Product price-->
+                                    20 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód lipowy" data-article-price="40" data-article-weight="1,2 kg" data-article-description="Miód z nektaru kwiatu lipy o charakterystycznym piekącym smaku oraz silnym aromacie kwiatu lipy. Szczególnie polecany w czasie przeziębień oraz chorób górnych dróg oddechowych." data-article-image="images/mini-products/lipowy-p-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/lipowy-p-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód lipowy</h5><br>
+                                    <!-- Product price-->
+                                    40 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Pyłek pszczeli mały" data-article-price="20" data-article-weight="200 g" data-article-description="Pełnowartościowy skład pyłku pszczelego sprawia, że wiele osób uważa go za naturalny suplement diety. Zawiera dużo białek oraz aminokwasów, jest także doskonałym źródłem witamin i minerałów, szczególnie witaminy A, E oraz D. Z tego względu pyłek pszczeli jest szczególnie polecany osobom z osłabioną odpornością. Ma korzystny wpływ na skład krwi i wspiera detoksykację wątroby." data-article-image="images/mini-products/pylek-m-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/pylek-m-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Pyłek pszczeli mały</h5><br>
+                                    <!-- Product price-->
+                                    20 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Pyłek pszczeli" data-article-price="50" data-article-weight="550 g" data-article-description="Pełnowartościowy skład pyłku pszczelego sprawia, że wiele osób uważa go za naturalny suplement diety. Zawiera dużo białek oraz aminokwasów, jest także doskonałym źródłem witamin i minerałów, szczególnie witaminy A, E oraz D. Z tego względu pyłek pszczeli jest szczególnie polecany osobom z osłabioną odpornością. Ma korzystny wpływ na skład krwi i wspiera detoksykację wątroby." data-article-image="images/mini-products/pylek-min.png">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promocja</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/pylek-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Pyłek pszczeli</h5><br>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">55 zł</span>
+                                    50 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Propolis" data-article-price="20" data-article-weight="30 g" data-article-description="Służy pszczołom do dezynfekcji i uszczelniania ula. Od wieków znany jest jako antyseptyczny środek, który działa zarówno w czasie leczenia, jak również profilaktycznie. Można go stosować i wewnętrznie, i zewnętrznie. Wykazuje działanie przeciwbakteryjne, przeciwwirusowe, przeciwgrzybiczne i przeciwpierwotniakowe." data-article-image="images/mini-products/propolis-min.png">
+                        <div class="card h-100">                
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/propolis-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Propolis</h5><br>
+                                    <!-- Product price-->
+                                    20 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód kremowany mały" data-article-price="20" data-article-weight="450 g" data-article-description="Znany także jako miód kremowy, to specyficzna forma miodu, która została poddana procesowi kremowania.Proces ten polega na powolnym rozcieraniu kryształków miodu podczas jego krystalizacji. Prawidłowo skremowany miód ma konsystencję przypominającą masło, a w jego strukturze nie są wyczuwalne kryształki." data-article-image="images/mini-products/kremowany-m-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/kremowany-m-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód kremowany mały</h5><br>
+                                    <!-- Product price-->
+                                    20 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                    </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód kremowany" data-article-price="40" data-article-weight="1,2 kg" data-article-description="Znany także jako miód kremowy, to specyficzna forma miodu, która została poddana procesowi kremowania.Proces ten polega na powolnym rozcieraniu kryształków miodu podczas jego krystalizacji. Prawidłowo skremowany miód ma konsystencję przypominającą masło, a w jego strukturze nie są wyczuwalne kryształki." data-article-image="images/mini-products/kremowany-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/kremowany-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód kremowany</h5><br>
+                                    <!-- Product price-->
+                                    40 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                    </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód wielokwiatowy" data-article-price="40" data-article-weight="1,2 kg" data-article-description="Miody wielokwiatowe posiadają wyrazisty, kwiatowy smak. Tworzone są z pyłku kwiatowego pozyskiwanego z wielu rodzajów kwiatów. Jego kolor może różnić się w zależności pory kwitnięcia i zbiorów. Jest źródłem energii dla mięśnia sercowego w chorobach serca i naczyń, a także pozytywnie działa na naszą odporność." data-article-image="images/mini-products/wielokwiatowy-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/wielokwiatowy-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód wielokwiatowy</h5><br>
+                                    <!-- Product price-->
+                                    40 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Pierzga pszczela w miodzie" data-article-price="60" data-article-weight="200 g" data-article-description="Zawiera mnóstwo ważnych składników odżywczych, dzięki czemu staje się idealnym produktem uzupełniającym codzienną zbilansowaną dietę. Pomoże w problemach z apetytem, z pewnością sprawdzi się u osób aktywnych fizycznie, a także wpłynie pozytywnie na aspekt włosów, skóry i paznokci." data-article-image="images/mini-products/pierzga-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/pierzga-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Pierzga pszczela w miodzie</h5>
+                                    <!-- Product price-->
+                                    60 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód nektarowo-spadziowy" data-article-price="50" data-article-weight="1,2 kg" data-article-description="Pierwszą wyczuwalną różnicą pomiędzy miodem nektarowo-spadziowym a najczęściej występującymi rodzajami w kuchni jest nieco mniejsza intensywność smaku i aromatu. W zapachu da się wyczuć nutę leśną i żywiczną. Przoduje on w czołówce najlepszych składów wśród miodów." data-article-image="images/mini-products/spadziowy-min.png">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/spadziowy-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód nektarowo-spadziowy</h5>
+                                    <!-- Product price-->
+                                    50 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Miód rzepakowy" data-article-price="30" data-article-weight="1,2 kg" data-article-description="Po skrystalizowaniu jest biały lub kremowy, o konsystencji drobnoziarnistej. Jest on bogaty w bor, który wykorzystywany jest do budowy tkanki kostnej oraz prawidłowego funkcjonowania śledziony i tarczycy." data-article-image="images/mini-products/rzepakowy-s-min.png">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promocja</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/rzepakowy-s-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód rzepakowy</h5><br>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">40 zł</span>
+                                    30 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col mb-5">
+                        <button disabled class="btn border-0" data-bs-toggle="modal" data-bs-target="" data-article-name="Miód rzepakowy płynny" data-article-price="40" data-article-weight="1,2 kg" data-article-description="Jest miodem wiosennym, jednym z pierwszych, które pszczoły przynoszą po zimie do pasieki. Pozyskuje się go w okresie masowego kwitnienia rzepaku, co przypada na przełom kwietnia i maja. Krystalizuje się szybko, w ciągu kilku dni po odbiorze. Jest on bogaty w bor, który wykorzystywany jest do budowy tkanki kostnej oraz prawidłowego funkcjonowania śledziony i tarczycy." data-article-image="images/mini-products/rzepakowy-p-min.png">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Niedostępny</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/mini-products/rzepakowy-p-min.png" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Miód rzepakowy płynny</h5>
+                                    <!-- Product price-->
+                                    40 zł
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>Do koszyka</a></div>
+                            </div>
+                        </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-4 bg-dark">
+            <div class="container">
+              <div class="facebook-link-container mb-2">
+              <a href="https://www.facebook.com/p/Pasieka-Korona-100088721704740/" class="text-decoration-none d-flex facebook-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook me-2" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                Facebook
+              </a></div>
+              <div class="facebook-link-container">
+              <a href="Regulamin.pdf" class="text-decoration-none d-flex facebook-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook me-2" viewBox="0 0 16 16">
+                  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z"/>
+                </svg>Regulamin
+              </a></div><br>
+              <p class="m-0 text-center text-white">Pasieka Korona 2024 &copy; Wszelkie prawa zastrzeżone</p>
+            </div>
+        </footer>
+        <!-- Modals -->
+        <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bolder" id="articleName"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="articleImage" alt="Zdjęcie artykułu" style="max-width: 100%; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);">
+                        <br>
+                        <br>
+                        <h3 class="text-center" id="articlePrice"></h3>
+                        <p class="text-center" id="articleWeight"></p>
+                        <p id="articleDescription"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-outline-dark" id="addToCartBtn">
+                                <i class="bi-cart-fill me-1"></i>Do koszyka
+                            </button>
+                            <input type="number" class="form-control quantity-input" id="quantityInput" value="1" min="1" style="width: 60px; border: 1px solid black;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="addedToCartModal" tabindex="-1" aria-labelledby="addedToCartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addedToCartModalLabel">Sukces!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Produkt został dodany do koszyka.
+                    </div>
+                </div>
+            </div>
+        </div>              
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/confetti.js"></script>
+    </body>
+</html>
