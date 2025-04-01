@@ -47,7 +47,7 @@ Software versions used for development (**compatibility with earlier versions ha
 
 ## Setup Instructions
 
-Just go to [www.pasiekakorona.pl]
+Just go to www.pasiekakorona.pl.
 
 OR
 
