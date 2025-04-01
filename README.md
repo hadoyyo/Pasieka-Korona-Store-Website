@@ -3,9 +3,6 @@
 <div align="center">
   <img src="./ss/logo.png"/>
 </div>
-<div align="center">
-  <img src="./ss/logo.jpg"/>
-</div>
 
 ## Table of Contents
 - 🚀 [Project Overview](#project-overview)
