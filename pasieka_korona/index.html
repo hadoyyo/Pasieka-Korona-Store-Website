@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+        <title>Pasieka Korona - miód i produkty pszczele - Radzyń Podlaski</title>
+        <meta name="keywords" content="pasieka, miód, produkty pszczele, polski, miody, polskie, korona, miody polskie, pasieka korona miód, miód radzyń,miód radzyń podlaski,miód lubelskie,lubelskie,radzyń,radzyń podlaski,międzyrzec,kąkolewnica,pasieka korona radzyń, pasieka korona radzyń podlaski, pasieka białka, pasieka korona białka, białka">
+        <meta name="author" content="">
+        <meta name="description" content="Pasieka Korona - miód i inne produkty pszczele - Radzyń Podlaski">
+        <meta property="og:title" content="Pasieka Korona - Miód Radzyń Podlaski">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="https://pasiekakorona.pl/" />
+        <!-- icon-->
+        <link rel="shortcut icon" href="images/mini-logo.png">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" >
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Logo" width="120">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Strona główna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">O nas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+                    </ul>
+                    <form class="d-flex">
+                      <button class="btn btn-outline-dark" type="button" onclick="location.href='cart.html'">
+                        <i class="bi-cart-fill me-1"></i>
+                        Koszyk
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartCount"></span>
+                    </button> 
+                  </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+       <header>
+          <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Slajd 1 -->
+              <div class="carousel-item active">
+                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj1.webp') no-repeat center center; background-size: cover;">
+                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-4 fw-bolder mt-5">Z najczystszych regionów Polski</h1>
+                    <p class="lead fw-semibold mb-0">
+                      Zapraszamy do zapoznania się z ofertą
+                      produktów pszczelich z naszej pasieki
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Slajd 2 -->
+              <div class="carousel-item">
+                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj3.webp') no-repeat center center; background-size: cover;">
+                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-4 fw-bolder mt-5">Pełen zestaw pszczelich skarbów</h1>
+                    <p class="lead fw-semibold mb-0">
+                      Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Slajd 3 -->
+              <div class="carousel-item">
+                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj2.webp') no-repeat center center; background-size: cover;">
+                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-4 fw-bolder mt-5">Naturalne bogactwo prosto z ula</h1>
+                    <p class="lead fw-semibold mb-0">
+                      Poznaj moc właściwości naturalnych produktów pszczelich
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Slajd 4 -->
+              <div class="carousel-item">
+                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj4.webp') no-repeat center center; background-size: cover;">
+                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="fw-bolder mt-8"><a href="shop.html"><i class="bi bi-caret-right-fill"></i>Kliknij i sprawdź naszą ofertę</a></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Nawigacja carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+          <!--pozycjonowanie-->
+          <h2 style="display: none;">pasieka, miód, produkty pszczele, polski, miody, polskie, korona, miody polskie, pasieka korona miód ,miód radzyń, miód radzyń podlaski, miód lubelskie, lubelskie, radzyń, radzyń podlaski, międzyrzec, kąkolewnica, pasieka korona radzyń, pasieka korona radzyń podlaski, pasieka białka, pasieka korona białka, białka, miód białka</h2>
+          <title>pasieka, miód, produkty pszczele, polski, miody, polskie, korona, miody polskie, pasieka korona miód ,miód radzyń, miód radzyń podlaski, miód lubelskie, lubelskie, radzyń, radzyń podlaski, międzyrzec, kąkolewnica, pasieka korona radzyń, pasieka korona radzyń podlaski, pasieka białka, pasieka korona białka, białka, miód białka</title>
+            <h2 class="display-6 fw-bolder text-center">Aktualności</h2>
+            <br>
+            <div id="entriesContainer"></div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(1); return false;" id="page1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(2); return false;" id="page2">2</a></li>
+                </ul>
+            </nav>            
+            </ul>
+        </nav>
+            <hr>
+            <h2 class="display-6 fw-bolder text-center">Z życia pasieki</h2>
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                  <div class="carousel-inner pt-4">
+                    <div class="carousel-item active px-3" data-bs-interval="10000">
+                      <img src="images/wirowanie.jpg" class="carousel-img about2 mb-5" alt="...">
+                      <br>
+                      <br>
+                      <br>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Wirowanie</h5>
+                        <p>Proces oddzielania miodu od plastra</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item px-3" data-bs-interval="10000">
+                      <img src="images/odsklepianie.jpg" class="carousel-img about2 mb-5" alt="...">
+                      <br>
+                      <br>
+                      <br>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Odsklepianie</h5>
+                        <p>Usunięcie warstwy wosku z komórek plastra</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item px-3" data-bs-interval="10000">
+                      <img src="images/krolowa.jpg" class="carousel-img about2 mb-5" alt="...">
+                      <br>
+                      <br>
+                      <br>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Znakowanie królowej pszczół</h5>
+                        <p>Umieszczenie kolorowego opalitka na jej tułowiu</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item px-3" data-bs-interval="10000">
+                      <img src="images/zima.jpg" class="carousel-img about2 mb-5" alt="...">
+                      <br>
+                      <br>
+                      <br>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Zima w pasiece</h5>
+                        <p>Zadaniem pszczół jest przetrwanie do wiosny</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <h2 class="display-6 fw-bolder text-center" id="Weather">Pogoda</h2>
+                <br>
+                <div id="FetchSpace">
+                  <div id="FetchAPI">
+                    <div class="wrapper">
+                      <div class="img_section">
+                        <div class="default_info">
+                          <h2 class="default_day">Poniedziałek</h2>
+                          <span class="default_date">27 Maj 2024 </span>
+                          <div class="icons">
+                            <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" >
+                            <h2 class="weather_temp">22°C</h2>
+                            <h3 class="cloudtxt">Umiarkowane zachmurzenie</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="content_section">
+                        <form>
+                          <input
+                            type="text"
+                            placeholder="Wyszukaj miejscowość"
+                            class="input_field"
+                            style="margin-top: 1px"
+                          >
+                          <button class="btn_search"><i class="bi bi-search"></i> Szukaj</button>
+                        </form>
+              
+                        <div class="day_info">
+                          <div class="content">
+                            <p class="title">Miejscowość</p>
+                            <span class="value">Lublin</span>
+                          </div>
+                          <div class="content">
+                            <p class="title">Temeratura</p>
+                            <span class="value">23°C</span>
+                          </div>
+                          <div class="content">
+                            <p class="title">Wilgotność</p>
+                            <span class="value">2%</span>
+                          </div>
+                          <div class="content">
+                            <p class="title">Prędkośc wiatru</p>
+                            <span class="value">2.92 Km/h</span>
+                          </div>
+                        </div>
+              
+                        <div class="list_content">
+                          <ul>
+                            <li>
+                              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                              <span>Pon</span>
+                              <span class="day_temp">23°C</span>
+                            </li>
+                            <li>
+                              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                              <span>Pon</span>
+                              <span class="day_temp">23°C</span>
+                            </li>
+                            <li>
+                              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                              <span>Pon</span>
+                              <span class="day_temp">23°C</span>
+                            </li>
+                            <li>
+                              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                              <span>Pon</span>
+                              <span class="day_temp">23°C</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+        </section>
+
+        <!-- Toast-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="background-color:white; width: 400px;">
+            <div class="toast-header">
+              <img src="images/mini-logo.png" class="rounded me-2" height="15px" alt="Logo Pasieka Korona">
+              <strong class="me-auto color-yellow">Promocja!</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">
+              Już teraz skorzystaj z promocji "KUP 7, ZAPŁAĆ ZA 6"!<br>
+              <button type="button" class="btn btn-outline-dark btn-sm mt-2" onclick="window.location.href='shop.html'">Sprawdź</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer-->
+        <footer class="py-4 bg-dark">
+            <div class="container">
+              <div class="facebook-link-container mb-2">
+              <a href="https://www.facebook.com/p/Pasieka-Korona-100088721704740/" class="text-decoration-none d-flex facebook-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook me-2" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                Facebook
+              </a></div>
+              <div class="facebook-link-container">
+              <a href="Regulamin.pdf" class="text-decoration-none d-flex facebook-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook me-2" viewBox="0 0 16 16">
+                  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z"/>
+                </svg>Regulamin
+              </a></div><br>
+              <p class="m-0 text-center text-white">Pasieka Korona 2025 &copy; Wszelkie prawa zastrzeżone</p>
+            </div>
+        </footer>
+        <!-- Modals -->
+        <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5 fw-bolder" id="articleName">Produkt</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <img src="zdjecie" id="articleImage" alt="Zdjęcie artykułu" style="max-width: 100%; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);">
+                      <br>
+                      <br>
+                      <h3 class="text-center" id="articlePrice">Cena</h3>
+                      <p class="text-center" id="articleWeight"></p>
+                      <p id="articleDescription" style="text-align: justify;"></p>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <button class="btn btn-outline-dark" id="addToCartBtn">
+                              <i class="bi-cart-fill me-1"></i>Do koszyka
+                          </button>
+                          <input type="number" class="form-control quantity-input" id="quantityInput" value="1" min="1" style="width: 60px; border: 1px solid black;">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="modal fade" id="addedToCartModal" tabindex="-1" aria-labelledby="addedToCartModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="addedToCartModalLabel">Sukces!</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      Produkt został dodany do koszyka.
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+          const entries = [
+              {
+                date: '02.02.2025',
+                title: '&#129723; Noworoczne nowości &#10024;',
+                content: 'Z radością informujemy, że w naszym sklepie pojawiły się nowe produkty: pierzga pszczela oraz pierzga pszczela w miodzie. Pierzga w miodzie to doskonałe połączenie naturalnej słodyczy i prozdrowotnych właściwości, idealne do codziennego spożycia. Natomiast czysta pierzga to produkt dla tych, którzy cenią sobie jej naturalny, intensywny smak i pełnię wartości odżywczych.'
+            },
+              {
+                date: '17.08.2024',
+                title: '&#127855; Tegoroczny miód gryczany &#127804;',
+                content: 'W ofercie naszego sklepu można już znaleźć świeży, tegoroczny miód gryczany o wyjątkowym smaku i aromacie. Jest to produkt w 100% naturalny, bogaty w wartości odżywcze, idealny do codziennego spożycia oraz jako dodatek do potraw. Zapraszamy do zakupu.'
+            },
+              {
+                date: '03.07.2024',
+                title: '&#x1F33F; Miód lipowy &#x1F338;',
+                content: 'W naszym sklepie można już kupić świeży miód lipowy. Charakteryzuje się nie tylko wspaniałym smakiem, ale także licznymi właściwościami zdrowotnymi. Miód lipowy jest ceniony za swoje działanie wspomagające układ odpornościowy, łagodzące kaszel i choroby górnych dróg oddechowych.'
+            },
+              {
+                date: '15.06.2024',
+                title: '&#128059; Nowe produkty w sklepie &#128293;',
+                content: 'W ofercie naszego sklepu od dzisiaj można już znaleźć małą wersję pyłku pszczelego oraz miodu kremowanego. Oba produkty są idealne na prezent lub do codziennego użytku, dostarczając naturalnych składników odżywczych i niezapomnianego smaku.'
+            },
+            {
+                date: '24.05.2024',
+                title: '&#128029; Zbiory 2024 &#127855;',
+                content: 'Z radością informujemy, że tegoroczny miód rzepakowy jest już dostępny w naszym sklepie. Miód rzepakowy to nie tylko wyjątkowy smak, ale także bogactwo korzyści zdrowotnych. Jego jasna barwa i delikatny, kwiatowy aromat sprawiają, że jest on ulubionym wyborem wielu miłośników miodu. Kliknij w zakładkę "Sklep" aby zapoznać się z naszą ofertą.'
+            },
+            {
+                date: '19.04.2024',
+                title: '&#127803; Poławianie pyłku pszczelego &#127799;',
+                content: 'Wkrótce rozpoczniemy na naszej pasiece proces poławiania pyłku pszczelego. Ten naturalny suplement diety jest bogaty w białko, witaminy, minerały oraz aminokwasy. Poławianie pyłku to zadanie wymagające precyzji i dbałości o pszczoły. Zachęcamy do śledzenia naszych aktualności, aby dowiedzieć się więcej o dostępności pyłku pszczelego w naszym sklepie.'
+            }
+        ];
+
+        const itemsPerPage = 3;
+        let currentPage = 1;
+
+        function showPage(page) {
+            currentPage = page;
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedEntries = entries.slice(start, end);
+
+            const entriesContainer = document.getElementById('entriesContainer');
+            entriesContainer.innerHTML = '';
+
+            paginatedEntries.forEach(entry => {
+                const entryElement = document.createElement('div');
+                entryElement.classList.add('entry');
+                entryElement.innerHTML = `
+                    <h6 class="mx-auto" style="max-width: 65%;">${entry.date}</h6>
+                    <h3 class="fw-semibold mx-auto" style="max-width: 65%;">${entry.title}</h3>
+                    <p class="fw-normal mx-auto" style="max-width: 65%;">${entry.content}</p>
+                `;
+                entriesContainer.appendChild(entryElement);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage(currentPage);
+        });
+
+        function changePage(page) {
+          // Aktualizacja wyświetlanych wpisów
+          showPage(page);
+      
+          // Aktualizacja URL bez przeładowania strony
+          history.replaceState(null, null, `?page=${page}`);
+      
+          // Aktualizacja aktywnej klasy dla paginacji
+          const paginationLinks = document.querySelectorAll('.pagination .page-link');
+          paginationLinks.forEach(link => {
+              link.classList.remove('active');
+          });
+          document.getElementById(`page${page}`).classList.add('active');
+      }
+        </script>
+        <script>
+          changePage(1);
+        </script>
+        <style>
+          .page-link {
+            color: black;
+            outline: none;
+          }
+          .page-link.active {
+            color: black; /* Niebieski kolor tekstu */
+            background-color: #f5f5f5; /* Bardzo jasnoszare tło (prawie białe) */
+            border: 1px solid #e0e0e0; /* Jasnoszare obramowanie */
+        }
+        .page-link:hover {
+          color: black; /* Czarny kolor tekstu przy najechaniu */
+          background-color: #f5f5f5; /* Tło bez zmian przy najechaniu */
+      }                    
+        </style>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var toastEl = document.getElementById('liveToast');
+            var toast = new bootstrap.Toast(toastEl, {
+              delay: 8000 
+            });
+            toast.show();
+          });
+        </script>
+
+    </body>
+</html>
