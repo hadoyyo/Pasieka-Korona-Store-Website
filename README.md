@@ -1,4 +1,4 @@
-# Pasieka Korona - Website based on the sale of honey and other bee products
+# Pasieka Korona - Shop Website
 
 <div align="center">
   <img src="./ss/logo.png"/>
