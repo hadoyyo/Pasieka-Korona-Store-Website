@@ -57,26 +57,12 @@ OR
 ## Screenshots
 <div align="center">
   <img src="./ss/ss1.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss2.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss3.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss4.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss5.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss6.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss7.png"/>
-</div>
-<div align="center">
   <img src="./ss/ss8.png"/>
 </div>
 
