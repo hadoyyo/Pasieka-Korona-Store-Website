@@ -51,7 +51,7 @@ Just go to www.pasiekakorona.pl.
 
 OR
 
-1. Extract the `pasieka_korona.zip` file.
+1. Download the `pasieka_korona` folder.
 2. Open the `index.html` file.
 
 ## Screenshots
