@@ -14,7 +14,9 @@
 
 ## Project Overview
 
-The **Pasieka Korona** website was made for the owner of an apiary, in order to directly sell honey and other bee products. The store was made independently, without the help of software like Shopify or WooCommerce. **The website is only available in Polish language version!**
+The **Pasieka Korona** website was made for the owner of an apiary, in order to directly sell honey and other bee products. The store was made independently, without the help of software like Shopify or WooCommerce. 
+> [!NOTE]  
+> The website is only available in Polish language version!
 
 ## Features
 
@@ -42,8 +44,10 @@ The **Pasieka Korona** website was made for the owner of an apiary, in order to 
 - JavaScript
 
 ## Requirements
-Software versions used for development (**compatibility with earlier versions has not been tested**):
+Software versions used for development:
 - Bootstrap 5.0
+> [!WARNING]  
+> Compatibility with earlier versions has not been tested.
 
 ## Setup Instructions
 
