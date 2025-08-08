@@ -11245,6 +11245,7 @@ footer {
 }
 
 #bannerCarousel .carousel-caption h1,
+#bannerCarousel .carousel-caption h2,
 #bannerCarousel .carousel-caption p {
   text-shadow: 7px 0px 35px rgba(0, 0, 0, 1), -7px 0px 35px rgba(0, 0, 0, 1), 0px 0px 35px rgba(0, 0, 0, 1);
   }
