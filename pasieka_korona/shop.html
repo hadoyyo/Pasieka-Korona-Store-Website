@@ -157,9 +157,8 @@
         </header>
         <!-- Section-->
         <section class="py-5">
-            <div class="bg-danger mx-auto px-4 py-3 text-center text-white">
-                <h2 class="fw-bold mb-2">&#10024; PROMOCJA KUP 7, ZAPŁAĆ ZA 6! &#10024;</h2>
-                <p class="mb-0">Dodaj do koszyka 7 sztuk danego produktu. W koszyku automatycznie zostanie naliczona cena tylko za 6 sztuk!</p>
+            <div class="baner-container">
+                <img src="/images/baner.webp" alt="Baner" class="baner">
             </div>
             
             <!-- Search Box -->
@@ -179,7 +178,7 @@
                 <div class="no-products-message" id="noProductsMessage">
                     <img src="/images/bee-sad.webp" alt="Pusty koszyk" class="img-fluid mb-4" style="max-height: 200px;">
                     <h3 class="fw-bold">Brak produktów których szukasz</h3>
-                    <p>Spróbuj zmienić frazę wyszukiwania</p>
+                    <p class="mb-5">Spróbuj zmienić frazę wyszukiwania</p>
                 </div>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="productsContainer">
                     <div class="col mb-5 product-card">
@@ -216,7 +215,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód nawłociowy</h5><br>
+                                    <h5 class="fw-bolder">Miód nawłociowy</h5>
                                     <!-- Product price-->
                                     50 zł
                                 </div>
@@ -258,7 +257,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód wielokwiatowy</h5><br>
+                                    <h5 class="fw-bolder">Miód wielokwiatowy</h5>
                                     <!-- Product price-->
                                     40 zł
                                 </div>
@@ -279,7 +278,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Pyłek pszczeli mały</h5><br>
+                                    <h5 class="fw-bolder">Pyłek pszczeli mały</h5>
                                     <!-- Product price-->
                                     20 zł
                                 </div>
@@ -302,7 +301,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Pyłek pszczeli</h5><br>
+                                    <h5 class="fw-bolder">Pyłek pszczeli</h5>
                                     <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">55 zł</span>
                                     50 zł
@@ -349,7 +348,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód rzepakowy</h5><br>
+                                    <h5 class="fw-bolder">Miód rzepakowy</h5>
                                     <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">40 zł</span>
                                     30 zł
@@ -365,13 +364,15 @@
                     <div class="col mb-5 product-card">
                         <button class="btn border-0" data-bs-toggle="modal" data-bs-target="#myModal" data-article-name="Pierzga pszczela" data-article-price="60" data-article-weight="200 g" data-article-description="Zawiera mnóstwo ważnych składników odżywczych, dzięki czemu staje się idealnym produktem uzupełniającym codzienną zbilansowaną dietę. Pomoże w problemach z apetytem, z pewnością sprawdzi się u osób aktywnych fizycznie, a także wpłynie pozytywnie na aspekt włosów, skóry i paznokci." data-article-image="images/mini-products/pierzga-min.webp">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge text-white position-absolute bg-success" style="top: 0.5rem; right: 0.5rem;">Bestseller</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="images/mini-products/pierzga-min.webp" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Pierzga pszczela</h5><br>
+                                    <h5 class="fw-bolder">Pierzga pszczela</h5>
                                     <!-- Product price-->
                                     60 zł
                                 </div>
@@ -413,7 +414,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód gryczany mały</h5><br>
+                                    <h5 class="fw-bolder">Miód gryczany mały</h5>
                                     <!-- Product price-->
                                     25 zł
                                 </div>
@@ -434,7 +435,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód gryczany</h5><br>
+                                    <h5 class="fw-bolder">Miód gryczany</h5>
                                     <!-- Product price-->
                                     50 zł
                                 </div>
@@ -455,7 +456,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód lipowy mały</h5><br>
+                                    <h5 class="fw-bolder">Miód lipowy mały</h5>
                                     <!-- Product price-->
                                     20 zł
                                 </div>
@@ -476,7 +477,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód lipowy</h5><br>
+                                    <h5 class="fw-bolder">Miód lipowy</h5>
                                     <!-- Product price-->
                                     40 zł
                                 </div>
@@ -541,7 +542,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Miód kremowany</h5><br>
+                                    <h5 class="fw-bolder">Miód kremowany</h5>
                                     <!-- Product price-->
                                     40 zł
                                 </div>
@@ -620,6 +621,10 @@
                     </div>
                 </div>
             </div>
+            <div class="mx-auto px-4 py-3 text-center text-white" style="background-color: #EA1919;">
+                <h2 class="fw-bold mb-2">&#10024; PROMOCJA KUP 7, ZAPŁAĆ ZA 6! &#10024;</h2>
+                <p class="mb-0">Dodaj do koszyka 7 sztuk danego produktu. W koszyku automatycznie zostanie naliczona cena tylko za 6 sztuk!</p>
+            </div>
         </section>
         <!-- Footer-->
          <footer class="py-4 bg-dark">
@@ -642,31 +647,34 @@
         </footer>
         <!-- Modals -->
         <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5 fw-bolder" id="articleName"></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="" id="articleImage" alt="Zdjęcie artykułu" style="max-width: 100%; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);">
-                        <br>
-                        <br>
-                        <h3 class="text-center" id="articlePrice"></h3>
-                        <p class="text-center" id="articleWeight"></p>
-                        <p id="articleDescription"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-outline-dark" id="addToCartBtn">
-                                <i class="bi-cart-fill me-1"></i>Do koszyka
-                            </button>
-                            <input type="number" class="form-control quantity-input" id="quantityInput" value="1" min="1" style="width: 60px; border: 1px solid black;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bolder" id="articleName"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="articleImage" alt="Zdjęcie artykułu" style="max-width: 100%;">
+                    <br>
+                    <br>
+                    <h3 class="text-center" id="articlePrice"></h3>
+                    <p class="text-center" id="articleWeight"></p>
+                    <p id="articleDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <button class="btn btn-outline-dark" id="addToCartBtn">
+                            <i class="bi-cart-fill me-1"></i>Do koszyka
+                        </button>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2 fw-bold">Ilość:</span>
+                            <input type="number" class="form-control quantity-input" id="quantityInput" value="1" min="1" style="width: 70px; border: 1px solid black; text-align: center;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         <div class="modal fade" id="addedToCartModal" tabindex="-1" aria-labelledby="addedToCartModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -687,7 +695,6 @@
         <script src="js/confetti.js"></script>
         
         <script>
-            // Funkcja do filtrowania produktów
             function filterProducts() {
                 const searchTerm = document.getElementById('productSearch').value.toLowerCase();
                 const productCards = document.querySelectorAll('.product-card');
