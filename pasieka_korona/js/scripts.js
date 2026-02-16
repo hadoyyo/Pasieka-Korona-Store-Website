@@ -18,7 +18,7 @@ document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function(button) {
     var imageSrc = this.getAttribute('data-article-image');
 
     document.getElementById('articleName').textContent = name;
-    document.getElementById('articlePrice').textContent = price+ " zł";
+    document.getElementById('articlePrice').textContent = price + " zł";
     document.getElementById('articleWeight').textContent = weight;
     document.getElementById('articleDescription').textContent = description;
     document.getElementById('articleImage').setAttribute('src', imageSrc);
@@ -101,14 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Oblicz całkowitą cenę i zastosuj promocję tylko dla najtańszego produktu
     cart.forEach(product => {
       let productTotalPrice = product.price * product.quantity;
       let productDiscountedPrice = productTotalPrice;
   
-      // Zastosuj promocję tylko dla najtańszego produktu z 7 sztukami
       if (product === cheapestProductWith7Items && product.quantity >= 7) {
-        productDiscountedPrice = product.price * (product.quantity-1); // Pay for 6 instead of 7
+        productDiscountedPrice = product.price * (product.quantity-1);
       }
   
       totalPrice += productTotalPrice;
@@ -143,6 +141,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  function updateFreeHoneyProgress(total) {
+    const threshold = 150;
+    const progressBar = document.getElementById("freeHoneyProgress");
+    const text = document.getElementById("freeHoneyText");
+
+    if (!progressBar || !text) return;
+
+    let percentage = (total / threshold) * 100;
+    if (percentage > 100) percentage = 100;
+
+    progressBar.style.width = percentage + "%";
+
+    if (total >= threshold) {
+        text.innerHTML = "Otrzymasz darmowy miód kremowany!";
+        progressBar.classList.remove("bg-warning");
+        progressBar.classList.add("bg-success");
+    } else {
+        const remaining = (threshold - total).toFixed(2);
+        text.innerHTML = "Brakuje " + remaining + " zł";
+        progressBar.classList.remove("bg-success");
+        progressBar.classList.add("bg-warning");
+    }
+}
+
   function updateCartDisplay() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContentsElement = document.getElementById('cartContents');
@@ -156,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalPrice = 0;
     let discountedTotalPrice = 0;
   
-    // Znajdź najtańszy produkt z 7 sztukami
     let cheapestProductWith7Items = null;
     cart.forEach(product => {
       if (product.quantity >= 7) {
@@ -178,9 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let productTotalPrice = product.price * product.quantity;
         let productDiscountedPrice = productTotalPrice;
   
-        // Zastosuj promocję tylko dla najtańszego produktu z 7 sztukami
         if (product === cheapestProductWith7Items && product.quantity >= 7) {
-          productDiscountedPrice = product.price * (product.quantity-1); // Pay for 6 instead of 7
+          productDiscountedPrice = product.price * (product.quantity-1);
         }
   
         totalPrice += productTotalPrice;
@@ -192,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <td class="text-center" id="th-secondary">${product.weight}</td>
           <td class="text-center">
             <div class="quantity-controls">
-              <button class="btn btn-sm btn-outline-secondary detail-hidden" onclick="increaseQuantity(${index})">+</button>
+              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 30px; padding: 0;" onclick="increaseQuantity(${index})">+</button>
               <span>${product.quantity}</span>
-              <button class="btn btn-sm btn-outline-secondary detail-hidden" onclick="decreaseQuantity(${index})">-</button>
+              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 30px; padding: 0;" onclick="decreaseQuantity(${index})">-</button>
             </div>
           </td>
           <td class="text-center" id="th-secondary">${product.price.toFixed(2)} zł</td>
@@ -212,16 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
         cartContentsElement.appendChild(row);
       });
   
-      // Display total price with discount if applicable
       if (discountedTotalPrice !== totalPrice) {
         totalPriceElement.innerHTML = `<del>${totalPrice.toFixed(2)} zł</del> <span class="color-yellow">${discountedTotalPrice.toFixed(2)} zł</span>`;
       } else {
         totalPriceElement.innerText = totalPrice.toFixed(2)+" zł";
       }
+      updateFreeHoneyProgress(discountedTotalPrice);
     }
   }
 
-    // Funkcja do aktualizacji licznika produktów w koszyku
     function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const totalItems = cart.reduce((total, product) => total + product.quantity, 0);
@@ -231,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Definiujemy funkcje globalnie
     window.increaseQuantity = function(index) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart[index].quantity += 1;
@@ -612,7 +631,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
           dostawca: dostawca,
       };
 
-      // Zapisujemy dane w localStorage
       localStorage.setItem('person', JSON.stringify(person));
     
   window.location.href = 'payment.html';
@@ -622,7 +640,7 @@ return isValid;
 } 
 
 function generateOrderCode() {
-  // Pobierz dane osoby z localStorage
+
   const person = JSON.parse(localStorage.getItem('person'));
 
   if (!person) {
@@ -630,38 +648,24 @@ function generateOrderCode() {
     return;
   }
 
-  // Pobierz pierwszą literę imienia i nazwiska
   const firstLetterOfFirstName = person.imie.charAt(0).toUpperCase();
   const firstLetterOfLastName = person.nazwisko.charAt(0).toUpperCase();
 
-  // Pobierz aktualną datę
   const date = new Date();
 
-  // Formatowanie dnia tygodnia na dwa znaki
   const day = date.getDate().toString().padStart(2, '0');
 
-  // Formatowanie miesiąca na dwa znaki
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
 
-  // Formatowanie roku na dwa znaki
   const year = date.getFullYear().toString().slice(-2);
 
-  // Pobierz godzinę, minutę i sekundę
-  const hours = date.getHours().toString().padStart(2, '0');
-  const minutes = date.getMinutes().toString().padStart(2, '0');
-  const seconds = date.getSeconds().toString().padStart(2, '0');
-
-  // Generowanie losowych dwóch znaków z wielkich liter i cyfr
   const randomChars = generateRandomChars(2);
 
-  // Tworzenie kodu zamówienia z godziny, minuty, sekundy oraz losowych dwóch znaków
-  const orderCode = `${firstLetterOfFirstName}${firstLetterOfLastName}${day}${month}${year}${hours}${minutes}${seconds}${randomChars}`;
+  const orderCode = `${firstLetterOfFirstName}${firstLetterOfLastName}${day}${month}${year}${randomChars}`;
   
-  // Zapisz kod zamówienia do localStorage
   localStorage.setItem('orderCode', orderCode);
 }
 
-// Funkcja do generowania losowych znaków z wielkich liter i cyfr
 function generateRandomChars(length) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   let result = '';
@@ -675,18 +679,14 @@ function generateRandomChars(length) {
 
 function confirmation() {
   document.addEventListener('DOMContentLoaded', function() {
-      // Pobierz numer zamówienia z localStorage
       const orderCode = localStorage.getItem('orderCode');
 
-      // Pobierz dane dostawy z localStorage
       const savedDeliveryData = localStorage.getItem('person');
       const deliveryData = JSON.parse(savedDeliveryData);
 
-      // Pobierz zawartość koszyka z localStorage
       const savedCartData = localStorage.getItem('cart');
       const cartData = JSON.parse(savedCartData);
 
-      // Funkcja do formatu zawartości koszyka jako tekst
       function formatCartContents(cartItems) {
           let cartText = 'Produkt | Waga | Ilość | Cena | Łączna cena\n';
           cartItems.forEach(item => {
@@ -695,36 +695,30 @@ function confirmation() {
           return cartText;
       }
 
-      // Sformatuj zawartość koszyka
       const cartContents = formatCartContents(cartData);
 
-      // Utwórz formularz do wysyłki
       const form = document.createElement('form');
       form.action = "mailto:hubertj10.pl@gmail.com";
       form.method = 'POST';
 
-      // Tytuł wiadomości z numerem zamówienia
       const subject = document.createElement('input');
       subject.type = 'hidden';
       subject.name = 'subject';
       subject.value = `Zamówienie ${orderCode}`;
       form.appendChild(subject);
 
-      // Zawartość koszyka
       const cartInput = document.createElement('input');
       cartInput.type = 'hidden';
       cartInput.name = 'description';
       cartInput.value = cartContents;
       form.appendChild(cartInput);
 
-      // Email użytkownika (dodany jako ukryty, mimo że formularz jest wysyłany na ten email)
       const emailInput = document.createElement('input');
       emailInput.type = 'hidden';
       emailInput.name = 'email';
       emailInput.value = deliveryData.email;
       form.appendChild(emailInput);
 
-      // Dodaj formularz do dokumentu i wyślij
       document.body.appendChild(form);
       form.submit();
   });
@@ -733,34 +727,27 @@ function confirmation() {
 function savePaymentMethod() {
   var paymentMethod;
 
-  // Pobranie wszystkich elementów radio z nazwą 'paymentMethod'
   var radios = document.getElementsByName('paymentMethod');
 
-  // Iteracja po wszystkich elementach radio
   for (var i = 0; i < radios.length; i++) {
-      // Sprawdzenie, który element jest zaznaczony
       if (radios[i].checked) {
-          // Przypisanie wartości zaznaczonego elementu do zmiennej paymentMethod
           paymentMethod = radios[i].value;
           break;
       }
   }
 
   if (paymentMethod) {
-      // Pobranie obiektu 'person' z localStorage
       var person = JSON.parse(localStorage.getItem('person')) || {};
 
-      // Dodanie lub aktualizacja właściwości 'paymentMethod' w obiekcie 'person'
       person.paymentMethod = paymentMethod;
 
-      // Zapisanie obiektu 'person' z powrotem do localStorage
       localStorage.setItem('person', JSON.stringify(person));
   }
 }
 
 function executeGenerateAndRedirect() {
   savePaymentMethod();
-  generateOrderCode(); // Wywołaj funkcję generate()
+  generateOrderCode();
   confirmation();
-  location.href = 'thankyou.html'; // Przekieruj na stronę 'thankyou.html'
+  location.href = 'thankyou.html';
 }
