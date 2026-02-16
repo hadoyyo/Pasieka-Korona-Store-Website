@@ -43,6 +43,7 @@
             .search-container {
                 max-width: 400px;
                 margin: 0 auto 2rem auto;
+                color: #212529;
             }
 
             .search-container .input-group {
@@ -58,13 +59,13 @@
             }
 
             .search-container .input-group-text .bi {
-                color: #000;
+                color: #212529;
             }
 
             .search-container .form-control {
                 border: 1px solid #dee2e6;
                 border-left: none;
-                padding: 0.75rem;
+                padding: 0.5rem;
                 box-shadow: none !important;
                 outline: none !important;
             }
@@ -78,7 +79,7 @@
                 border: 1px solid #dee2e6;
                 border-left: none;
                 background-color: transparent;
-                color: #000;
+                color: #212529;
                 transition: all 0.3s ease;
                 display: flex;
                 align-items: center;
@@ -86,9 +87,9 @@
             }
 
             #clearSearch:hover {
-                background-color: #000;
+                background-color: #212529;
                 color: #fff;
-                border-color: #000;
+                border-color: #212529;
             }
             
             .product-card {
@@ -108,6 +109,7 @@
 
             #clearSearch .bi {
                 font-size: 1.5rem;
+                margin-top: 3px;
             }
         </style>
     </head>
@@ -118,24 +120,30 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="images/logo.png" alt="Logo" width="120">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <div class="d-flex align-items-center order-lg-3 order-2">
+
+                    <!-- Koszyk -->
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="button" onclick="location.href='cart.html'">
+                            <i class="bi-cart-fill me-1"></i>
+                            <span  class="badge bg-dark text-white ms-1 rounded-pill" id="cartCount"></span>
+                        </button> 
+                    </form>
+                    <!-- Menu -->
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+                
+                <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="shop.html">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Strona główna</a></li>
+                        <li class="nav-item fw-bolder"><a class="nav-link active" href="shop.html">Sklep</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">O nas</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="button" onclick="location.href='cart.html'">
-                            <i class="bi-cart-fill me-1"></i>
-                            Koszyk
-                            <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartCount"></span>
-                        </button> 
-                    </form>
                 </div>
             </div>
         </nav>
