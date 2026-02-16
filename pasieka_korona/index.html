@@ -70,7 +70,7 @@
                 <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj1.webp') no-repeat center center; background-size: cover;">
                   <div class="carousel-caption d-flex flex-column justify-content-center h-100">
                     <h1 class="display-4 fw-bolder mt-5">Miód z najczystszych regionów Polski</h1>
-                    <p class="lead fw-semibold mb-0">
+                    <p class="lead fw-bold mb-0">
                       Zapraszamy do zapoznania się z ofertą
                       produktów pszczelich z naszej pasieki
                     </p>
@@ -82,7 +82,7 @@
                 <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj5.webp') no-repeat center center; background-size: cover;">
                   <div class="carousel-caption d-flex flex-column justify-content-center h-100">
                     <h2 class="display-4 fw-bolder mt-5">Start sezonu 2025!</h2>
-                    <p class="lead fw-semibold mb-0">
+                    <p class="lead fw-bold mb-0">
                       Sprawdź tegoroczną ofertę miodów w zakładce "Sklep"
                     </p>
                   </div>
@@ -93,7 +93,7 @@
                 <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj3.webp') no-repeat center center; background-size: cover;">
                   <div class="carousel-caption d-flex flex-column justify-content-center h-100">
                     <h2 class="display-4 fw-bolder mt-5">Pełen zestaw pszczelich skarbów</h2>
-                    <p class="lead fw-semibold mb-0">
+                    <p class="lead fw-bold mb-0">
                       Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę
                     </p>
                   </div>
@@ -104,7 +104,7 @@
                 <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj2.webp') no-repeat center center; background-size: cover;">
                   <div class="carousel-caption d-flex flex-column justify-content-center h-100">
                     <h2 class="display-4 fw-bolder mt-5">Naturalne bogactwo prosto z ula</h2>
-                    <p class="lead fw-semibold mb-0">
+                    <p class="lead fw-bold mb-0">
                       Poznaj moc właściwości naturalnych produktów pszczelich
                     </p>
                   </div>
@@ -132,9 +132,6 @@
         </header>
         <!-- Section-->
         <section class="py-5">
-          <!--pozycjonowanie-->
-          <h2 style="display: none;">pasieka, miód, produkty pszczele, polski, miody, polskie, korona, miody polskie, pasieka korona miód ,miód radzyń, miód radzyń podlaski, miód lubelskie, lubelskie, radzyń, radzyń podlaski, międzyrzec, kąkolewnica, pasieka korona radzyń, pasieka korona radzyń podlaski, pasieka białka, pasieka korona białka, białka, miód białka</h2>
-          <title>pasieka, miód, produkty pszczele, polski, miody, polskie, korona, miody polskie, pasieka korona miód ,miód radzyń, miód radzyń podlaski, miód lubelskie, lubelskie, radzyń, radzyń podlaski, międzyrzec, kąkolewnica, pasieka korona radzyń, pasieka korona radzyń podlaski, pasieka białka, pasieka korona białka, białka, miód białka</title>
             <h2 class="display-6 fw-bolder text-center">Aktualności</h2>
             <br>
             <div id="entriesContainer"></div>
@@ -292,12 +289,13 @@
           <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="background-color:white; width: 400px;">
             <div class="toast-header">
               <img src="images/mini-logo.png" class="rounded me-2" height="15px" alt="Logo Pasieka Korona">
-              <strong class="me-auto color-yellow">Promocja!</strong>
+              <strong class="me-auto color-yellow fw-bold">Promocja!</strong>
               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <div class="toast-body text-center">
-              Już teraz skorzystaj z promocji "KUP 7, ZAPŁAĆ ZA 6"!<br>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-2" onclick="window.location.href='shop.html'">Sprawdź</button>
+            <div class="container-na-baner-toast">
+                <button onclick="window.location.href='shop.html'" style="border: none; background: none; padding: 0; margin: 0; width: 100%; height: 100%; cursor: pointer;">
+                <img src="images/baner.webp" alt="Baner Pasieki" class="baner-zdjecie-toast">
+                </button>
             </div>
           </div>
         </div>
@@ -471,8 +469,8 @@
                 }
 
                 entryElement.innerHTML = `
-                    <h6 class="mx-auto" style="max-width: 65%;">${entry.date}</h6>
-                    <h3 class="fw-semibold mx-auto" style="max-width: 65%;">${entry.title}</h3>
+                    <h6 class="mx-auto fw-bold" style="max-width: 65%;">${entry.date}</h6>
+                    <h3 class="fw-bold mx-auto" style="max-width: 65%;">${entry.title}</h3>
                     <p class="fw-normal mx-auto" style="max-width: 65%;">${entry.content}</p>
                     ${imagesHTML}
                 `;
