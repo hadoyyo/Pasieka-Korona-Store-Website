@@ -68,8 +68,9 @@ OR
   <img src="./ss/ss6.png"/>
   <img src="./ss/ss7.png"/>
   <img src="./ss/ss8.png"/>
+  <img src="./ss/ss9.png"/>
 </div>
 
 ### Mobile Device
 
-<img src="./ss/ss9.jpg" width="49%"/> <img src="./ss/ss10.jpg" width="49%"/>
+<img src="./ss/ss10.jpg" width="49%"/> <img src="./ss/ss11.jpg" width="49%"/>
