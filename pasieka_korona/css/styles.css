@@ -7776,6 +7776,10 @@ textarea.form-control-lg {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important;
 }
+.px-carousel {
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
 
 .px-3 {
   padding-right: 1rem !important;
@@ -10988,12 +10992,6 @@ hr {
   }
 }
 
-@media (max-width: 768px) {
-  .quantity-controls button, #toHide {
-    display: none;
-  }
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -11261,11 +11259,6 @@ footer {
   object-fit: cover;
 }
 
-.about2 { 
-  border-radius: 25px;
-}
-
-
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -11493,11 +11486,23 @@ footer {
 .free-honey-box {
     width: 100%;
     max-width: 520px;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 12px;
 }
 
 .cart-amount-btn:hover {
     background-color: #212529;
     border: 1px solid #212529;
+}
+
+.cart-amount-btn:active {
+    background-color: #212529 !important;
+    border: 1px solid #212529 !important;
+}
+
+@media (max-width: 768px) {
+  #toHide { 
+    display: none; 
+  } 
 }

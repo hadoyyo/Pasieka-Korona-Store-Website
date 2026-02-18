@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cartCountElement.innerText = totalItems;
   }
 
-  // Add event listener to "Add to cart" buttons on cards
   document.querySelectorAll('.add-to-cart').forEach(button => {
       button.addEventListener('click', event => {
           event.preventDefault();
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  // Add event listener to "Add to cart" button in modal
   document.getElementById('addToCartBtn').addEventListener('click', () => {
       const productName = document.getElementById('articleName').innerText;
       const productPrice = parseFloat(document.getElementById('articlePrice').innerText.replace(' zł', ''));
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
       addToCart(productName, productPrice, productWeight, quantity);
   });
 
-  // Function to add product to cart
   function addToCart(name, price, weight, quantity) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingProductIndex = cart.findIndex(product => product.name === name);
@@ -72,10 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (existingProductIndex > -1) {
-        // Update quantity if product already exists in the cart
         cart[existingProductIndex].quantity += quantity;
     } else {
-        // Add new product to the cart
         cart.push({ name, price, weight, quantity });
     }
 
@@ -86,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   }
 
-  // Function to calculate total price of all products in the cart
   function calculateTotalPrice() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let totalPrice = 0;
@@ -119,10 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // Update cart count on page load
   updateCartCount();
 
-  // Update modal with product data
   document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
       button.addEventListener('click', () => {
           const productName = button.getAttribute('data-article-name');
@@ -212,15 +204,15 @@ document.addEventListener('DOMContentLoaded', () => {
           <td class="text-center">${product.name}</td>
           <td class="text-center" id="th-secondary">${product.weight}</td>
           <td class="text-center">
-            <div class="quantity-controls">
-              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 30px; padding: 0;" onclick="increaseQuantity(${index})">+</button>
+            <div class="quantity-controls" style="white-space: nowrap;">
+              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 25px; padding: 0;" onclick="increaseQuantity(${index})">+</button>
               <span>${product.quantity}</span>
-              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 30px; padding: 0;" onclick="decreaseQuantity(${index})">-</button>
+              <button class="btn btn-sm btn-outline-secondary cart-amount-btn detail-hidden" style="width: 25px; height: 25px; padding: 0;" onclick="decreaseQuantity(${index})">-</button>
             </div>
           </td>
-          <td class="text-center" id="th-secondary">${product.price.toFixed(2)} zł</td>
+          <td class="text-center" id="th-secondary" style="white-space: nowrap;">${product.price.toFixed(2)} zł</td>
           <td class="text-center">
-            ${product.quantity >= 7 && product === cheapestProductWith7Items ? `<del>${productTotalPrice.toFixed(2)} zł</del> ${productDiscountedPrice.toFixed(2)} zł` : `${productTotalPrice.toFixed(2)} zł`}
+            ${product.quantity >= 7 && product === cheapestProductWith7Items ? `<del style="white-space: nowrap;">${productTotalPrice.toFixed(2)} zł</del> ${productDiscountedPrice.toFixed(2)} zł` : `${productTotalPrice.toFixed(2)} zł`}
           </td>
           <td class="text-center detail-hidden">
             <button class="btn btn-sm btn-outline-danger align-items-center" onclick="removeFromCart(${index})">
@@ -285,14 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('quantityInput').addEventListener('keydown', function (e) {
-  // Blokowanie wprowadzania niepożądanych znaków
   if (e.key === '-' || e.key === 'e' || e.key === 'E') {
       e.preventDefault();
   }
 });
 
 document.getElementById('quantityInput').addEventListener('input', function (e) {
-  // Usunięcie wszystkich niepożądanych znaków
   e.target.value = e.target.value.replace(/[^0-9]/g, '');
 });
 
@@ -359,13 +349,10 @@ async function findLocation(name) {
     console.log(result);
 
     if (result.cod !== "404") {
-      // display image content
       const ImageContent = displayImageContent(result);
 
-      // display right side content
       const rightSide = rightSideContent(result);
 
-      // forecast function
       displayForeCast(result.coord.lat, result.coord.lon);
 
       setTimeout(() => {
@@ -381,7 +368,6 @@ async function findLocation(name) {
   } catch (error) {}
 }
 
-// display image content and temp
 function displayImageContent(data) {
   return `<img src="https://openweathermap.org/img/wn/${
     data.weather[0].icon
@@ -390,7 +376,6 @@ function displayImageContent(data) {
     <h3 class="cloudtxt">${data.weather[0].description}</h3>`;
 }
 
-// display the right side content
 function rightSideContent(result) {
   return `<div class="content">
           <p class="title">Miejscowość</p>
@@ -414,7 +399,6 @@ async function displayForeCast(lat, long) {
   const ForeCast_API = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API}`;
   const data = await fetch(ForeCast_API);
   const result = await data.json();
-  // filter the forecast
   const uniqeForeCastDays = [];
   const daysForecast = result.list.filter((forecast) => {
     const forecastDate = new Date(forecast.dt_txt).getDate();
@@ -431,14 +415,12 @@ async function displayForeCast(lat, long) {
   });
 }
 
-// forecast html element data
 function forecast(frContent) {
   const day = new Date(frContent.dt_txt);
   const dayName = days[day.getDay()];
   const splitDay = dayName.split("", 3);
   const joinDay = splitDay.join("");
 
-  // console.log(dayName);
 
   return `<li>
   <img src="https://openweathermap.org/img/wn/${
@@ -503,7 +485,6 @@ window.addEventListener("DOMContentLoaded", () => {
   
     var isValid = true;
   
-    // Walidacja dla pola "Imię"
     if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]{1,}$/u.test(imieValue)) {
       imieError.textContent = "Imię musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
       isValid = false;
@@ -511,7 +492,6 @@ window.addEventListener("DOMContentLoaded", () => {
       imieError.textContent = "";
     }
   
-    // Walidacja dla pola "Nazwisko"
     if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]{1,}(-[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]{1,})?$/u.test(nazwiskoValue)) {
       nazwiskoError.textContent = "Nazwisko musi zaczynać się z wielkiej litery, mieć minimum 2 znaki i może być dwuczłonowe.";
       isValid = false;
@@ -519,16 +499,14 @@ window.addEventListener("DOMContentLoaded", () => {
       nazwiskoError.textContent = "";
     }
   
-    // Walidacja dla pola "Ulica"
-if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?: [A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(ulicaValue)) {
-  ulicaError.textContent = "Ulica musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
-  isValid = false;
-} else {
-  ulicaError.textContent = "";
-}
+    if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?: [A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(ulicaValue)) {
+      ulicaError.textContent = "Ulica musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
+      isValid = false;
+    } else {
+      ulicaError.textContent = "";
+    }
 
   
-    // Walidacja dla pola "Numer budynku"
     if (!/^\d+[a-zA-Z]?$/.test(numerBudynkuValue)) {
       numerBudynkuError.textContent = "Numer budynku musi być liczbą i może zawierać literę.";
       isValid = false;
@@ -536,7 +514,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?: [A-ZŻŹĆĘŚĄÓŁ][a-
       numerBudynkuError.textContent = "";
     }
   
-    // Walidacja dla pola "Miejscowość"
 if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(miejscowoscValue)) {
   miejscowoscError.textContent = "Miejscowość musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
   isValid = false;
@@ -544,7 +521,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
   miejscowoscError.textContent = "";
 }
   
-    // Walidacja dla pola "Kod pocztowy"
     if (!/^\d{2}-\d{3}$/.test(kodPocztowyValue)) {
       kodPocztowyError.textContent = "Kod pocztowy musi mieć format XX-XXX.";
       isValid = false;
@@ -552,7 +528,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       kodPocztowyError.textContent = "";
     }
   
-    // Walidacja dla pola "Telefon"
     if (!/^\d{9}$/.test(telefonValue)) {
       telefonError.textContent = "Telefon musi mieć 9 cyfr.";
       isValid = false;
@@ -560,7 +535,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       telefonError.textContent = "";
     }
   
-    // Walidacja dla pola "Email"
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
       emailError.textContent = "Wprowadź poprawny e-mail.";
       isValid = false;
@@ -568,7 +542,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       emailError.textContent = "";
     }
 
-    // Walidacja dla pola "Województwo"
     if (provinceValue === "") {
       provinceError.textContent = "Wybierz województwo.";
       isValid = false;
@@ -576,7 +549,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       provinceError.textContent = "";
     }
   
-    // Walidacja dla pola "Metoda dostawy"
     if (!dostawaValue) {
       dostawaError.textContent = "Wybierz metodę dostawy.";
       isValid = false;
@@ -584,7 +556,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       dostawaError.textContent = "";
     }
   
-    // Walidacja dla pola "Zgoda na przetwarzanie danych"
     if (!zgodaChecked) {
       zgodaError.textContent = "Musisz wyrazić zgodę na przetwarzanie danych.";
       isValid = false;
