@@ -11274,6 +11274,96 @@ footer {
   text-shadow: 7px 0px 35px rgba(0, 0, 0, 1), -7px 0px 35px rgba(0, 0, 0, 1), 0px 0px 35px rgba(0, 0, 0, 1);
   }
 
+#myCarousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: #000;
+}
+
+.my-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.my-carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.my-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.my-carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 15%;
+  color: #fff;
+}
+
+.my-carousel-caption h1,
+.my-carousel-caption h2,
+.my-carousel-caption p {
+  text-shadow: 7px 0px 35px rgba(0,0,0,1), -7px 0px 35px rgba(0,0,0,1), 0px 0px 35px rgba(0,0,0,1);
+  color: #fff;
+}
+
+.my-carousel-caption a {
+  text-decoration: none;
+  color: #fff;
+}
+.my-carousel-caption a:hover {
+  color: #ebebeb;
+}
+
+.my-carousel-btn {
+  position: absolute;
+  top: 10%;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  padding: 0;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+.my-carousel-btn:hover {
+  opacity: 0.9;
+}
+.my-carousel-prev { left: 0; }
+.my-carousel-next { right: 0; }
+
+.my-carousel-btn svg {
+  width: 2rem;
+  height: 2rem;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.6));
+}
+
 .carousel-item a
 {
   text-decoration: none;
@@ -11310,6 +11400,7 @@ footer {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 @media (max-width: 768px) {

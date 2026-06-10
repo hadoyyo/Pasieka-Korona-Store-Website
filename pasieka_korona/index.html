@@ -62,71 +62,55 @@
             </div>
         </nav>
         <!-- Header-->
-       <header>
-          <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+        <header>
+          <div id="myCarousel">
+            <div class="my-carousel-track" id="myCarouselTrack">
               <!-- Slajd 1 -->
-              <div class="carousel-item active">
-                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj1.webp') no-repeat center center; background-size: cover;">
-                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                    <h1 class="display-4 fw-bolder mt-5">Miód z najczystszych regionów Polski</h1>
-                    <p class="lead fw-bold mb-0">
-                      Zapraszamy do zapoznania się z ofertą
-                      produktów pszczelich z naszej pasieki
-                    </p>
-                  </div>
+              <div class="my-carousel-slide">
+                <img src="css/images_css/zdj1.webp" alt="Miód z najczystszych regionów Polski">
+                <div class="my-carousel-caption">
+                  <h1 class="display-4 fw-bolder mt-5">Miód z najczystszych regionów Polski</h1>
+                  <p class="lead fw-bold mb-0">Zapraszamy do zapoznania się z ofertą produktów pszczelich z naszej pasieki</p>
                 </div>
               </div>
-              <!-- Slajd 2025-->
-               <div class="carousel-item">
-                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj5.webp') no-repeat center center; background-size: cover;">
-                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                    <h2 class="display-4 fw-bolder mt-5">Produkty z sezonu 2025!</h2>
-                    <p class="lead fw-bold mb-0">
-                      Sprawdź tegoroczną ofertę miodów w zakładce "Sklep"
-                    </p>
-                  </div>
+              <!-- Slajd 2026 -->
+              <div class="my-carousel-slide">
+                <img src="css/images_css/zdj5.webp" alt="Produkty z sezonu 2026">
+                <div class="my-carousel-caption">
+                  <h2 class="display-4 fw-bolder mt-5">Produkty z sezonu 2026!</h2>
+                  <p class="lead fw-bold mb-0">Sprawdź tegoroczną ofertę miodów w zakładce "Sklep"</p>
                 </div>
               </div>
               <!-- Slajd 2 -->
-              <div class="carousel-item">
-                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj3.webp') no-repeat center center; background-size: cover;">
-                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                    <h2 class="display-4 fw-bolder mt-5">Pełen zestaw pszczelich skarbów</h2>
-                    <p class="lead fw-bold mb-0">
-                      Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę
-                    </p>
-                  </div>
+              <div class="my-carousel-slide">
+                <img src="css/images_css/zdj3.webp" alt="Pełen zestaw pszczelich skarbów">
+                <div class="my-carousel-caption">
+                  <h2 class="display-4 fw-bolder mt-5">Pełen zestaw pszczelich skarbów</h2>
+                  <p class="lead fw-bold mb-0">Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę</p>
                 </div>
               </div>
               <!-- Slajd 3 -->
-              <div class="carousel-item">
-                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj2.webp') no-repeat center center; background-size: cover;">
-                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                    <h2 class="display-4 fw-bolder mt-5">Naturalne bogactwo prosto z ula</h2>
-                    <p class="lead fw-bold mb-0">
-                      Poznaj moc właściwości naturalnych produktów pszczelich
-                    </p>
-                  </div>
+              <div class="my-carousel-slide">
+                <img src="css/images_css/zdj2.webp" alt="Naturalne bogactwo prosto z ula">
+                <div class="my-carousel-caption">
+                  <h2 class="display-4 fw-bolder mt-5">Naturalne bogactwo prosto z ula</h2>
+                  <p class="lead fw-bold mb-0">Poznaj moc właściwości naturalnych produktów pszczelich</p>
                 </div>
               </div>
               <!-- Slajd 4 -->
-              <div class="carousel-item">
-                <div class="d-block w-100" style="height: 600px; background: url('css/images_css/zdj4.webp') no-repeat center center; background-size: cover;">
-                  <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                    <h2 class="fw-bolder mt-8"><a href="shop.html"><i class="bi bi-caret-right-fill"></i>Kliknij i sprawdź naszą ofertę</a></h2>
-                  </div>
+              <div class="my-carousel-slide">
+                <img src="css/images_css/zdj4.webp" alt="Sprawdź naszą ofertę">
+                <div class="my-carousel-caption">
+                  <h2 class="fw-bolder mt-8"><a href="shop.html"><i class="bi bi-caret-right-fill"></i>Kliknij i sprawdź naszą ofertę</a></h2>
                 </div>
               </div>
             </div>
-            <!-- Nawigacja carousel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <!-- Przyciski nawigacji -->
+            <button class="my-carousel-btn my-carousel-prev" id="myCarouselPrev" aria-label="Previous">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" width="20" height="20"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="my-carousel-btn my-carousel-next" id="myCarouselNext" aria-label="Next">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" width="20" height="20"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
             </button>
           </div>
         </header>
@@ -565,5 +549,74 @@
           });
         </script>
 
+        <script>
+        (function() {
+          var track = document.getElementById('myCarouselTrack');
+          var slides = track.querySelectorAll('.my-carousel-slide');
+          var total = slides.length;
+          var current = 0;
+          var animating = false;
+          var autoplayTimer = null;
+          var DURATION = 600; // ms
+
+          function goTo(next, direction) {
+            if (animating || next === current) return;
+            animating = true;
+            resetAutoplay();
+
+            var curr = slides[current];
+            var nextSlide = slides[next];
+
+            nextSlide.style.transition = 'none';
+            nextSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+            nextSlide.style.zIndex = '2';
+            curr.style.zIndex = '1';
+
+            nextSlide.offsetHeight;
+
+            nextSlide.style.transition = 'transform ' + DURATION + 'ms ease-in-out';
+            curr.style.transition = 'transform ' + DURATION + 'ms ease-in-out';
+
+            nextSlide.style.transform = 'translateX(0)';
+            curr.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+
+            setTimeout(function() {
+              curr.style.transition = 'none';
+              curr.style.transform = 'translateX(100%)';
+              curr.style.zIndex = '0';
+              current = next;
+              animating = false;
+            }, DURATION);
+          }
+
+          function next() {
+            goTo((current + 1) % total, 'next');
+          }
+
+          function prev() {
+            goTo((current - 1 + total) % total, 'prev');
+          }
+
+          function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            autoplayTimer = setInterval(next, 5000);
+          }
+
+          slides.forEach(function(s, i) {
+            s.style.transition = 'none';
+            s.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
+            s.style.zIndex = i === 0 ? '1' : '0';
+          });
+
+          document.getElementById('myCarouselNext').addEventListener('click', function() {
+            next();
+          });
+          document.getElementById('myCarouselPrev').addEventListener('click', function() {
+            prev();
+          });
+
+          resetAutoplay();
+        })();
+        </script>
     </body>
 </html>
