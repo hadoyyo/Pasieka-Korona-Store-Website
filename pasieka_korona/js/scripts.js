@@ -1,11 +1,3 @@
-/*!
-* Start Bootstrap - Shop Homepage v5.0.6 (https://startbootstrap.com/template/shop-homepage)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
-
 var myModal = new bootstrap.Modal(document.getElementById('myModal'));
 var addedToCartModal = new bootstrap.Modal(document.getElementById('addedToCartModal'));
 
@@ -271,7 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCount();
     }
 
-    // Update cart count on page load
     updateCartCount();
     updateCartDisplay();
 });
@@ -285,8 +276,6 @@ document.getElementById('quantityInput').addEventListener('keydown', function (e
 document.getElementById('quantityInput').addEventListener('input', function (e) {
   e.target.value = e.target.value.replace(/[^0-9]/g, '');
 });
-
-//Fetch API
 
 "use strict";
 
@@ -311,12 +300,10 @@ const days = [
   "Sobota",
 ];
 
-// display the day
 const day = new Date();
 const dayName = days[day.getDay()];
 dayEl.textContent = dayName;
 
-// display date
 let month = day.toLocaleString("default", { month: "long" });
 let date = day.getDate();
 let year = day.getFullYear();
@@ -324,11 +311,9 @@ let year = day.getFullYear();
 console.log();
 dateEl.textContent = date + " " + month + " " + year;
 
-// add event
 btnEl.addEventListener("click", (e) => {
   e.preventDefault();
 
-  // check empty value
   if (inputEl.value !== "") {
     const Search = inputEl.value;
     inputEl.value = "";
@@ -434,7 +419,7 @@ window.addEventListener("DOMContentLoaded", () => {
     findLocation("Warszawa");
   });
 
-  function validateForm() {
+function validateForm() {
     var imieInput = document.getElementById("imie");
     var imieValue = imieInput.value.trim();
     var imieError = document.getElementById("imieError");
@@ -484,6 +469,8 @@ window.addEventListener("DOMContentLoaded", () => {
     var regulaminError = document.getElementById("regulaminError");
   
     var isValid = true;
+
+    var isPickup = dostawaInput && dostawaInput.id === 'Odbiór osobisty';
   
     if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]{1,}$/u.test(imieValue)) {
       imieError.textContent = "Imię musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
@@ -499,33 +486,47 @@ window.addEventListener("DOMContentLoaded", () => {
       nazwiskoError.textContent = "";
     }
   
-    if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?: [A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(ulicaValue)) {
-      ulicaError.textContent = "Ulica musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
-      isValid = false;
+    if (!isPickup) {
+        if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?: [A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(ulicaValue)) {
+          ulicaError.textContent = "Ulica musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
+          isValid = false;
+        } else {
+          ulicaError.textContent = "";
+        }
+    
+        if (!/^\d+[a-zA-Z]?$/.test(numerBudynkuValue)) {
+          numerBudynkuError.textContent = "Numer budynku musi być liczbą i może zawierać literę.";
+          isValid = false;
+        } else {
+          numerBudynkuError.textContent = "";
+        }
+    
+        if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(miejscowoscValue)) {
+          miejscowoscError.textContent = "Miejscowość musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
+          isValid = false;
+        } else {
+          miejscowoscError.textContent = "";
+        }
+    
+        if (!/^\d{2}-\d{3}$/.test(kodPocztowyValue)) {
+          kodPocztowyError.textContent = "Kod pocztowy musi mieć format XX-XXX.";
+          isValid = false;
+        } else {
+          kodPocztowyError.textContent = "";
+        }
+    
+        if (provinceValue === "") {
+          provinceError.textContent = "Wybierz województwo.";
+          isValid = false;
+        } else {
+          provinceError.textContent = "";
+        }
     } else {
-      ulicaError.textContent = "";
-    }
-
-  
-    if (!/^\d+[a-zA-Z]?$/.test(numerBudynkuValue)) {
-      numerBudynkuError.textContent = "Numer budynku musi być liczbą i może zawierać literę.";
-      isValid = false;
-    } else {
-      numerBudynkuError.textContent = "";
-    }
-  
-if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+)*$/u.test(miejscowoscValue)) {
-  miejscowoscError.textContent = "Miejscowość musi zaczynać się z wielkiej litery i mieć minimum 2 znaki.";
-  isValid = false;
-} else {
-  miejscowoscError.textContent = "";
-}
-  
-    if (!/^\d{2}-\d{3}$/.test(kodPocztowyValue)) {
-      kodPocztowyError.textContent = "Kod pocztowy musi mieć format XX-XXX.";
-      isValid = false;
-    } else {
-      kodPocztowyError.textContent = "";
+        ulicaError.textContent = "";
+        numerBudynkuError.textContent = "";
+        miejscowoscError.textContent = "";
+        kodPocztowyError.textContent = "";
+        provinceError.textContent = "";
     }
   
     if (!/^\d{9}$/.test(telefonValue)) {
@@ -540,13 +541,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
       isValid = false;
     } else {
       emailError.textContent = "";
-    }
-
-    if (provinceValue === "") {
-      provinceError.textContent = "Wybierz województwo.";
-      isValid = false;
-    } else {
-      provinceError.textContent = "";
     }
   
     if (!dostawaValue) {
@@ -571,8 +565,6 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
     }
   
     if (isValid) {
-      
-
       var imie = document.getElementById('imie').value;
       var nazwisko = document.getElementById('nazwisko').value;
       var ulica = document.getElementById('ulica').value;
@@ -604,11 +596,11 @@ if (!/^[A-ZŻŹĆĘŚĄÓŁ][a-zżźćńółęąś]+(?:[\s-][A-ZŻŹĆĘŚĄÓŁ
 
       localStorage.setItem('person', JSON.stringify(person));
     
-  window.location.href = 'payment.html';
-
-return isValid;
+      window.location.href = 'payment.html';
+    }
+    
+    return isValid;
 }
-} 
 
 function generateOrderCode() {
 

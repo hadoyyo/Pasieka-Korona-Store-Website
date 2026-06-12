@@ -221,27 +221,46 @@
                 return;
             }
         
-            document.getElementById('output').innerHTML = `
-                <table class="table">
-                    <tr>
-                        <th>Dane osobowe</th>
-                        <th>Adres</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            ${deliveryData.imie} ${deliveryData.nazwisko}<br>
-                            Email: ${deliveryData.email || '-'}<br>
-                            Telefon: ${deliveryData.telefon}
-                        </td>
-                        <td>
-                            Ulica: ${deliveryData.ulica}
-                            ${deliveryData.numerBudynku} Numer lokalu: ${deliveryData.numerLokalu || '-'}<br>
-                            ${deliveryData.kodPocztowy} ${deliveryData.miejscowosc}<br>
-                            Województwo: ${deliveryData.province}
-                        </td>
-                    </tr>
-                </table>
-            `;
+            const isPickup = deliveryData.dostawca === 'Odbiór osobisty';
+
+            if (isPickup) {
+                document.getElementById('output').innerHTML = `
+                    <table class="table">
+                        <tr>
+                            <th>Dane osobowe</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                ${deliveryData.imie || ''} ${deliveryData.nazwisko || ''}<br>
+                                Email: ${deliveryData.email || '-'}<br>
+                                Telefon: ${deliveryData.telefon || ''}
+                            </td>
+                        </tr>
+                    </table>
+                `;
+            } else {
+                document.getElementById('output').innerHTML = `
+                    <table class="table">
+                        <tr>
+                            <th>Dane osobowe</th>
+                            <th>Adres</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                ${deliveryData.imie || ''} ${deliveryData.nazwisko || ''}<br>
+                                Email: ${deliveryData.email || '-'}<br>
+                                Telefon: ${deliveryData.telefon || ''}
+                            </td>
+                            <td>
+                                Ulica: ${deliveryData.ulica || ''}
+                                ${deliveryData.numerBudynku || ''} Numer lokalu: ${deliveryData.numerLokalu || '-'}<br>
+                                ${deliveryData.kodPocztowy || ''} ${deliveryData.miejscowosc || ''}<br>
+                                Województwo: ${deliveryData.province || ''}
+                            </td>
+                        </tr>
+                    </table>
+                `;
+            }
         
             document.getElementById('deliveryC').innerText = deliveryData.deliveryCost;
             document.getElementById('deliveryD').innerText = deliveryData.dostawca;

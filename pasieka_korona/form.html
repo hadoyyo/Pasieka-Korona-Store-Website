@@ -68,24 +68,25 @@
           <input type="text" class="form-control" id="nazwisko" name="nazwisko" placeholder="" aria-label="Nazwisko">
         </div>
       </div>
+      <div id="addressFields" style="max-height:0; overflow:hidden; pointer-events:none; transition: max-height 0.4s ease, opacity 0.4s ease; opacity:0; padding: 0 4px; margin: 0 -4px;">
       <div class="row g-2 mb-3">
         <div class="col">
           <label for="ulica" class="form-label"><b>Ulica*</b></label>
-          <input type="text" class="form-control" id="ulica" name="ulica" placeholder="" aria-label="Ulica">
+          <input type="text" class="form-control" id="ulica" name="ulica" placeholder="" aria-label="Ulica" disabled>
         </div>
         <div class="col">
           <label for="numerBudynku" class="form-label"><b>Nr. budynku*</b></label>
-          <input type="text" class="form-control" id="numerBudynku" name="numerBudynku" placeholder="" aria-label="Numer budynku">
+          <input type="text" class="form-control" id="numerBudynku" name="numerBudynku" placeholder="" aria-label="Numer budynku" disabled>
         </div>
         <div class="col">
           <label for="numerLokalu" class="form-label"><b>Nr. lokalu</b></label>
-          <input type="text" class="form-control" id="numerLokalu" name="numerLokalu" placeholder="" aria-label="Numer lokalu">
+          <input type="text" class="form-control" id="numerLokalu" name="numerLokalu" placeholder="" aria-label="Numer lokalu" disabled>
         </div>
       </div>
       <div class="row g-2 mb-3">
         <div class="col">
           <label for="province" class="form-label"><b>Województwo*</b></label>
-          <select class="form-control" id="province" name="province">
+          <select class="form-control" id="province" name="province" disabled>
             <option value="">Wybierz...</option>
             <option value="Dolnośląskie">Dolnośląskie</option>
             <option value="Kujawsko-Pomorskie">Kujawsko-Pomorskie</option>
@@ -107,12 +108,13 @@
         </div>
         <div class="col">
           <label for="miejscowosc" class="form-label"><b>Miejscowość*</b></label>
-          <input type="text" class="form-control" id="miejscowosc" name="miejscowosc" placeholder="" aria-label="Miejscowość">
+          <input type="text" class="form-control" id="miejscowosc" name="miejscowosc" placeholder="" aria-label="Miejscowość" disabled>
         </div>
         <div class="col">
           <label for="kodPocztowy" class="form-label"><b>Kod pocztowy*</b></label>
-          <input type="text" class="form-control" id="kodPocztowy" name="kodPocztowy" placeholder="" aria-label="Kod pocztowy">
+          <input type="text" class="form-control" id="kodPocztowy" name="kodPocztowy" placeholder="" aria-label="Kod pocztowy" disabled>
         </div>
+      </div>
       </div>
       <div class="row g-2 mb-3">
         <div class="col">
@@ -130,24 +132,24 @@
           <label class="form-label"><b>Metoda dostawy*</b></label>
           <div>
             <div>
-            <input type="radio" id="Odbiór osobisty" name="dostawa" value="0">
+            <input type="radio" id="Odbiór osobisty" name="dostawa" value="0" checked>
             <span style="font-size: 17px;"><i class="bi bi-person-fill"></i></span>
-            <label for="odbiorOsobisty" name="Odbiór osobisty">Odbiór osobisty**</label> - 0 zł 
+            <label for="odbiorOsobisty" name="Odbiór osobisty">Odbiór osobisty**</label> - 0 zł
             </div>
             <div>
             <input type="radio" id="Poczta Polska" name="dostawa" value="14.99">
             <img src="images/icons/Poczta_Polska.png" width="35">
-            <label for="pocztaPolska" name="Poczta Polska">Poczta Polska</label> - 15.99 zł 
+            <label for="pocztaPolska" name="Poczta Polska">Poczta Polska</label> - 15.99 zł
             </div>
             <div>
             <input type="radio" id="Inpost" name="dostawa" value="18.99">
             <img src="images/icons/inpost-logo.png" width="34">
-            <label for="inpost" name="Inpost">Inpost</label> - 18.99 zł 
+            <label for="inpost" name="Inpost">Inpost</label> - 18.99 zł
             </div>
             <div>
               <input type="radio" id="DPD" name="dostawa" value="18.99">
               <img src="images/icons/DPD.png" width="34">
-              <label for="dpd" name="DPD">DPD</label> - 18.99 zł 
+              <label for="dpd" name="DPD">DPD</label> - 18.99 zł
             </div>
             <div>
               <input type="radio" id="DHL" name="dostawa" value="18.99">
@@ -255,24 +257,70 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script>
+          function toggleAddressFields() {
+            const selected = document.querySelector('input[name="dostawa"]:checked');
+            const addressFields = document.getElementById('addressFields');
+            const inputs = addressFields.querySelectorAll('input, select');
+            const isPickup = selected && selected.id === 'Odbiór osobisty';
+
+            if (isPickup) {
+              addressFields.style.maxHeight = '0';
+              addressFields.style.opacity = '0';
+              addressFields.style.pointerEvents = 'none';
+              inputs.forEach(el => el.disabled = true);
+            } else {
+              addressFields.style.maxHeight = addressFields.scrollHeight + 'px';
+              addressFields.style.opacity = '1';
+              addressFields.style.pointerEvents = 'auto';
+              inputs.forEach(el => el.disabled = false);
+            }
+          }
+
+          function loadAddressFieldsFromStorage() {
+            const userData = JSON.parse(localStorage.getItem("person"));
+            if (!userData) return;
+            
+            document.getElementById("imie").value = userData.imie || "";
+            document.getElementById("nazwisko").value = userData.nazwisko || "";
+            document.getElementById("telefon").value = userData.telefon || "";
+            document.getElementById("email").value = userData.email || "";
+            
+            const selectedRadio = document.querySelector('input[name="dostawa"]:checked');
+            const isPickup = selectedRadio && selectedRadio.id === 'Odbiór osobisty';
+            
+            if (!isPickup) {
+              document.getElementById("ulica").value = userData.ulica || "";
+              document.getElementById("numerBudynku").value = userData.numerBudynku || "";
+              document.getElementById("numerLokalu").value = userData.numerLokalu || "";
+              document.getElementById("province").value = userData.province || "";
+              document.getElementById("miejscowosc").value = userData.miejscowosc || "";
+              document.getElementById("kodPocztowy").value = userData.kodPocztowy || "";
+            }
+          }
+
+          document.querySelectorAll('input[name="dostawa"]').forEach(radio => {
+            radio.addEventListener('change', toggleAddressFields);
+          });
+
           document.addEventListener("DOMContentLoaded", function() {
+            toggleAddressFields();
             
             if(localStorage.getItem("person")) {
-                const userData = JSON.parse(localStorage.getItem("person"));
-        
-                document.getElementById("imie").value = userData.imie || "";
-                document.getElementById("nazwisko").value = userData.nazwisko || "";
-                document.getElementById("ulica").value = userData.ulica || "";
-                document.getElementById("numerBudynku").value = userData.numerBudynku || "";
-                document.getElementById("numerLokalu").value = userData.numerLokalu || "";
-                document.getElementById("province").value = userData.province || "";
-                document.getElementById("miejscowosc").value = userData.miejscowosc || "";
-                document.getElementById("kodPocztowy").value = userData.kodPocztowy || "";
-                document.getElementById("telefon").value = userData.telefon || "";
-                document.getElementById("email").value = userData.email || "";
+              const userData = JSON.parse(localStorage.getItem("person"));
+              const savedDostawca = userData.dostawca;
+              
+              if (savedDostawca) {
+                const radioToSelect = document.getElementById(savedDostawca);
+                if (radioToSelect) {
+                  radioToSelect.checked = true;
+                }
+              }
+              
+              toggleAddressFields();
+              
+              loadAddressFieldsFromStorage();
             }
-        });
-        
+          });
         </script>
     </body>
 </html>
