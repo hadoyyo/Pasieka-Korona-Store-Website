@@ -119,18 +119,11 @@
             <h2 class="display-6 fw-bolder text-center">Aktualności</h2>
             <br>
             <div id="entriesContainer"></div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(1); return false;" id="page1">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(2); return false;" id="page2">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(3); return false;" id="page3">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#" onclick="changePage(4); return false;" id="page4">4</a></li>
-                </ul>
-            </nav>            
-            </ul>
-        </nav>
+        <div class="text-center mt-3 mb-2" id="loadMoreContainer" style="display:none;">
+            <button id="loadMoreBtn" onclick="loadMore()" class="btn btn-outline-dark px-4">
+                Więcej <i class="bi bi-chevron-down ms-1"></i>
+            </button>
+        </div>
             <hr>
             <section class="py-5">
               <div class="container">
@@ -450,56 +443,90 @@
         ];
 
         const itemsPerPage = 3;
-        let currentPage = 1;
+        let visibleCount = itemsPerPage;
 
-        function showPage(page) {
-            currentPage = page;
-            const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const paginatedEntries = entries.slice(start, end);
+        function createEntryElement(entry) {
+            let imagesHTML = '';
+            if (entry.images && entry.images.length > 0) {
+                const colClass = 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2';
+                imagesHTML = `
+                    <div class="mt-3" style="max-width: 65%; margin: 20px auto;">
+                        <div class="row g-2 justify-content-left">
+                            ${entry.images.map((imgSrc) => `
+                                <div class="${colClass}">
+                                    <div class="news-image-container" onclick="openNewsModal('${imgSrc}')">
+                                        <img src="${imgSrc}" class="news-square-image" alt="Zdjęcie ${entry.title}">
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
 
+            const inner = document.createElement('div');
+            inner.classList.add('entry');
+            inner.innerHTML = `
+                <h6 class="mx-auto fw-bold" style="max-width: 65%;">${entry.date}</h6>
+                <h3 class="fw-bold mx-auto" style="max-width: 65%;">${entry.title}</h3>
+                <p class="fw-normal mx-auto" style="max-width: 65%;">${entry.content}</p>
+                ${imagesHTML}
+            `;
+
+            const wrapper = document.createElement('div');
+            wrapper.style.maxHeight = '0';
+            wrapper.style.overflow = 'hidden';
+            wrapper.style.opacity = '0';
+            wrapper.style.transition = 'max-height 0.5s ease, opacity 0.4s ease';
+            wrapper.appendChild(inner);
+            return wrapper;
+        }
+
+        function renderEntries() {
             const entriesContainer = document.getElementById('entriesContainer');
             entriesContainer.innerHTML = '';
 
-            paginatedEntries.forEach(entry => {
-                const entryElement = document.createElement('div');
-                entryElement.classList.add('entry');
-                
-                let imagesHTML = '';
-                if (entry.images && entry.images.length > 0) {
-                    const colClass = 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2';
-                    
-                    imagesHTML = `
-                        <div class="mt-3" style="max-width: 65%; margin: 20px auto;">
-                            <div class="row g-2 justify-content-left">
-                                ${entry.images.map((imgSrc, index) => `
-                                    <div class="${colClass}">
-                                        <div class="news-image-container" onclick="openNewsModal('${imgSrc}')">
-                                            <img 
-                                                src="${imgSrc}" 
-                                                class="news-square-image" 
-                                                alt="Zdjęcie ${entry.title}"
-                                            >
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                entryElement.innerHTML = `
-                    <h6 class="mx-auto fw-bold" style="max-width: 65%;">${entry.date}</h6>
-                    <h3 class="fw-bold mx-auto" style="max-width: 65%;">${entry.title}</h3>
-                    <p class="fw-normal mx-auto" style="max-width: 65%;">${entry.content}</p>
-                    ${imagesHTML}
-                `;
-                entriesContainer.appendChild(entryElement);
+            entries.slice(0, visibleCount).forEach(entry => {
+                const wrapper = createEntryElement(entry);
+                entriesContainer.appendChild(wrapper);
+                wrapper.style.transition = 'none';
+                wrapper.style.maxHeight = '2000px';
+                wrapper.style.opacity = '1';
             });
+
+            updateLoadMoreBtn();
+        }
+
+        function loadMore() {
+            const entriesContainer = document.getElementById('entriesContainer');
+            const prevCount = visibleCount;
+            visibleCount += itemsPerPage;
+
+            entries.slice(prevCount, visibleCount).forEach((entry, i) => {
+                const wrapper = createEntryElement(entry);
+                entriesContainer.appendChild(wrapper);
+
+                wrapper.offsetHeight;
+
+                setTimeout(() => {
+                    wrapper.style.maxHeight = wrapper.querySelector('.entry').scrollHeight + 200 + 'px';
+                    wrapper.style.opacity = '1';
+                    setTimeout(() => {
+                        wrapper.style.maxHeight = '2000px';
+                    }, 520);
+                }, i * 80);
+            });
+
+            updateLoadMoreBtn();
+        }
+
+        function updateLoadMoreBtn() {
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+            loadMoreContainer.style.display = visibleCount < entries.length ? 'block' : 'none';
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            showPage(currentPage);
+            renderEntries();
         });
 
         function openNewsModal(imgSrc) {
@@ -507,36 +534,17 @@
           const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
           modal.show();
 }
-
-        function changePage(page) {
-          showPage(page);
-      
-          history.replaceState(null, null, `?page=${page}`);
-      
-          const paginationLinks = document.querySelectorAll('.pagination .page-link');
-          paginationLinks.forEach(link => {
-              link.classList.remove('active');
-          });
-          document.getElementById(`page${page}`).classList.add('active');
-      }
-        </script>
-        <script>
-          changePage(1);
         </script>
         <style>
-          .page-link {
-            color: black;
-            outline: none;
+          #loadMoreBtn {
+            border-color: #333;
+            color: #333;
+            transition: background-color 0.2s, color 0.2s;
           }
-          .page-link.active {
-            color: black;
-            background-color: #f5f5f5;
-            border: 1px solid #e0e0e0;
-        }
-        .page-link:hover {
-          color: black;
-          background-color: #f5f5f5;
-      }                    
+          #loadMoreBtn:hover {
+            background-color: #333;
+            color: #fff;
+          }
         </style>
 
         <script>
