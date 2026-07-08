@@ -11382,11 +11382,12 @@ footer {
 }
 
 .news-image-container {
+    position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     cursor: pointer;
-    border-radius: calc(0.375rem - 1px);
+    border-radius: 4px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
