@@ -22,9 +22,11 @@
         <link rel="shortcut icon" href="images/mini-logo.png">
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" >
-        <!-- Core theme CSS (includes Bootstrap)-->
+
         <link href="css/styles.css" rel="stylesheet">
         <link href="css/fonts.css" rel="stylesheet">
+        <link href="css/hero-carousel.css?v=6" rel="stylesheet">
+        <link href="css/subpages.css?v=2" rel="stylesheet">
     </head>
     <body>
         <!-- Navigation-->
@@ -61,56 +63,77 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header>
-          <div id="myCarousel">
-            <div class="my-carousel-track" id="myCarouselTrack">
-              <!-- Slajd 1 -->
-              <div class="my-carousel-slide">
-                <img src="css/images_css/zdj1.webp" alt="Miód z najczystszych regionów Polski">
-                <div class="my-carousel-caption">
-                  <h1 class="display-4 fw-bolder mt-5">Miód z najczystszych regionów Polski</h1>
-                  <p class="lead fw-bold mb-0">Zapraszamy do zapoznania się z ofertą produktów pszczelich z naszej pasieki</p>
-                </div>
+        <header class="hero-carousel" id="heroCarousel">
+          <div class="hero-carousel__slides">
+            <div class="hero-carousel__slide hero-carousel__slide--active" data-index="0">
+              <div class="hero-carousel__image-wrap">
+                <img src="css/images_css/zdj1.webp" alt="Miód z najczystszych regionów Polski" class="hero-carousel__image">
               </div>
-              <!-- Slajd 2026 -->
-              <div class="my-carousel-slide">
-                <img src="css/images_css/zdj5.webp" alt="Produkty z sezonu 2026">
-                <div class="my-carousel-caption">
-                  <h2 class="display-4 fw-bolder mt-5">Produkty z sezonu 2026!</h2>
-                  <p class="lead fw-bold mb-0">Sprawdź tegoroczną ofertę miodów w zakładce "Sklep"</p>
-                </div>
-              </div>
-              <!-- Slajd 2 -->
-              <div class="my-carousel-slide">
-                <img src="css/images_css/zdj3.webp" alt="Pełen zestaw pszczelich skarbów">
-                <div class="my-carousel-caption">
-                  <h2 class="display-4 fw-bolder mt-5">Pełen zestaw pszczelich skarbów</h2>
-                  <p class="lead fw-bold mb-0">Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę</p>
-                </div>
-              </div>
-              <!-- Slajd 3 -->
-              <div class="my-carousel-slide">
-                <img src="css/images_css/zdj2.webp" alt="Naturalne bogactwo prosto z ula">
-                <div class="my-carousel-caption">
-                  <h2 class="display-4 fw-bolder mt-5">Naturalne bogactwo prosto z ula</h2>
-                  <p class="lead fw-bold mb-0">Poznaj moc właściwości naturalnych produktów pszczelich</p>
-                </div>
-              </div>
-              <!-- Slajd 4 -->
-              <div class="my-carousel-slide">
-                <img src="css/images_css/zdj4.webp" alt="Sprawdź naszą ofertę">
-                <div class="my-carousel-caption">
-                  <h2 class="fw-bolder mt-8"><a href="shop.html"><i class="bi bi-caret-right-fill"></i>Kliknij i sprawdź naszą ofertę</a></h2>
-                </div>
+              <div class="hero-carousel__overlay"></div>
+              <div class="hero-carousel__caption">
+                <h1 class="hero-carousel__title">Miód z najczystszych<br>regionów Polski</h1>
+                <p class="hero-carousel__subtitle">Zapraszamy do zapoznania się z ofertą produktów pszczelich z naszej pasieki</p>
+                <a href="shop.html" class="hero-carousel__cta">Sprawdź ofertę <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-            <!-- Przyciski nawigacji -->
-            <button class="my-carousel-btn my-carousel-prev" id="myCarouselPrev" aria-label="Previous">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" width="20" height="20"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
+            <div class="hero-carousel__slide" data-index="1">
+              <div class="hero-carousel__image-wrap">
+                <img src="css/images_css/zdj5.webp" alt="Produkty z sezonu 2026" class="hero-carousel__image">
+              </div>
+              <div class="hero-carousel__overlay"></div>
+              <div class="hero-carousel__caption">
+                <h2 class="hero-carousel__title">Produkty z sezonu 2026!</h2>
+                <p class="hero-carousel__subtitle">Sprawdź tegoroczną ofertę miodów w zakładce „Sklep"</p>
+              </div>
+            </div>
+            <div class="hero-carousel__slide" data-index="2">
+              <div class="hero-carousel__image-wrap">
+                <img src="css/images_css/zdj3.webp" alt="Pełen zestaw pszczelich skarbów" class="hero-carousel__image">
+              </div>
+              <div class="hero-carousel__overlay"></div>
+              <div class="hero-carousel__caption">
+                <h2 class="hero-carousel__title">Pełen zestaw<br>pszczelich skarbów</h2>
+                <p class="hero-carousel__subtitle">Oprócz miodu oferujemy również pyłek pszczeli, propolis i pierzgę</p>
+              </div>
+            </div>
+            <div class="hero-carousel__slide" data-index="3">
+              <div class="hero-carousel__image-wrap">
+                <img src="css/images_css/zdj2.webp" alt="Naturalne bogactwo prosto z ula" class="hero-carousel__image">
+              </div>
+              <div class="hero-carousel__overlay"></div>
+              <div class="hero-carousel__caption">
+                <h2 class="hero-carousel__title">Naturalne bogactwo<br>prosto z ula</h2>
+                <p class="hero-carousel__subtitle">Poznaj moc właściwości naturalnych produktów pszczelich</p>
+              </div>
+            </div>
+            <div class="hero-carousel__slide" data-index="4">
+              <div class="hero-carousel__image-wrap">
+                <img src="css/images_css/zdj4.webp" alt="Sprawdź naszą ofertę" class="hero-carousel__image">
+              </div>
+              <div class="hero-carousel__overlay"></div>
+              <div class="hero-carousel__caption">
+                <h2 class="hero-carousel__title">Zamów miód<br>z dostawą do domu</h2>
+                <p class="hero-carousel__subtitle">Kliknij i sprawdź naszą pełną ofertę produktów pszczelich</p>
+                <a href="shop.html" class="hero-carousel__cta">Sprawdź ofertę <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-carousel__dots" id="heroCarouselDots">
+            <button class="hero-carousel__dot hero-carousel__dot--active" data-slide="0" aria-label="Slajd 1">
+              <span class="hero-carousel__dot-progress"></span>
             </button>
-            <button class="my-carousel-btn my-carousel-next" id="myCarouselNext" aria-label="Next">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" width="20" height="20"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+            <button class="hero-carousel__dot" data-slide="1" aria-label="Slajd 2">
+              <span class="hero-carousel__dot-progress"></span>
+            </button>
+            <button class="hero-carousel__dot" data-slide="2" aria-label="Slajd 3">
+              <span class="hero-carousel__dot-progress"></span>
+            </button>
+            <button class="hero-carousel__dot" data-slide="3" aria-label="Slajd 4">
+              <span class="hero-carousel__dot-progress"></span>
+            </button>
+            <button class="hero-carousel__dot" data-slide="4" aria-label="Slajd 5">
+              <span class="hero-carousel__dot-progress"></span>
             </button>
           </div>
         </header>
@@ -278,11 +301,11 @@
 
         <!-- Toast-->
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
-          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="background-color:white; width: 400px;">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="background-color:white; width: 400px; border-radius: 16px; overflow: hidden;">
             <div class="toast-header">
               <img src="images/mini-logo.png" class="rounded me-2" height="15px" alt="Logo Pasieka Korona">
-              <strong class="me-auto color-yellow fw-bold">Promocja!</strong>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              <strong class="me-auto text-dark fw-bold">Promocja!</strong>
+              <button type="button" class="btn-close me-0" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="container-na-baner-toast">
                 <button onclick="window.location.href='shop.html'" style="border: none; background: none; padding: 0; margin: 0; width: 100%; height: 100%; cursor: pointer;">
@@ -454,7 +477,7 @@
                         <div class="row g-2 justify-content-left">
                             ${entry.images.map((imgSrc) => `
                                 <div class="${colClass}">
-                                    <div class="news-image-container" onclick="openNewsModal('${imgSrc}')">
+                                    <div class="news-image-container gallery-card" onclick="openFullscreenImage('${imgSrc}')">
                                         <img src="${imgSrc}" class="news-square-image" alt="Zdjęcie ${entry.title}">
                                     </div>
                                 </div>
@@ -559,71 +582,100 @@
 
         <script>
         (function() {
-          var track = document.getElementById('myCarouselTrack');
-          var slides = track.querySelectorAll('.my-carousel-slide');
+          var carousel = document.getElementById('heroCarousel');
+          var slides = carousel.querySelectorAll('.hero-carousel__slide');
+          var dots = carousel.querySelectorAll('.hero-carousel__dot');
           var total = slides.length;
           var current = 0;
           var animating = false;
           var autoplayTimer = null;
-          var DURATION = 600; // ms
+          var AUTOPLAY_INTERVAL = 6000;
+          var TRANSITION_DURATION = 1000;
+          var paused = false;
 
-          function goTo(next, direction) {
+          function updateDots(index) {
+            dots.forEach(function(dot, i) {
+              dot.classList.remove('hero-carousel__dot--active');
+              var progress = dot.querySelector('.hero-carousel__dot-progress');
+              progress.style.transition = 'none';
+              progress.style.width = '0%';
+            });
+            dots[index].classList.add('hero-carousel__dot--active');
+            dots[index].querySelector('.hero-carousel__dot-progress').offsetWidth;
+            var activeProgress = dots[index].querySelector('.hero-carousel__dot-progress');
+            activeProgress.style.transition = 'width ' + AUTOPLAY_INTERVAL + 'ms linear';
+            activeProgress.style.width = '100%';
+          }
+
+          function goTo(next) {
             if (animating || next === current) return;
             animating = true;
-            resetAutoplay();
 
-            var curr = slides[current];
+            var currentSlide = slides[current];
             var nextSlide = slides[next];
 
-            nextSlide.style.transition = 'none';
-            nextSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
             nextSlide.style.zIndex = '2';
-            curr.style.zIndex = '1';
 
-            nextSlide.offsetHeight;
+            nextSlide.classList.add('hero-carousel__slide--active');
 
-            nextSlide.style.transition = 'transform ' + DURATION + 'ms ease-in-out';
-            curr.style.transition = 'transform ' + DURATION + 'ms ease-in-out';
+            updateDots(next);
 
-            nextSlide.style.transform = 'translateX(0)';
-            curr.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+            current = next;
 
             setTimeout(function() {
-              curr.style.transition = 'none';
-              curr.style.transform = 'translateX(100%)';
-              curr.style.zIndex = '0';
-              current = next;
+              currentSlide.classList.remove('hero-carousel__slide--active');
+              nextSlide.style.zIndex = '';
               animating = false;
-            }, DURATION);
+            }, TRANSITION_DURATION);
           }
 
           function next() {
-            goTo((current + 1) % total, 'next');
+            goTo((current + 1) % total);
           }
 
           function prev() {
-            goTo((current - 1 + total) % total, 'prev');
+            goTo((current - 1 + total) % total);
+          }
+
+          function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(function() {
+              if (!paused) next();
+            }, AUTOPLAY_INTERVAL);
+            updateDots(current);
+          }
+
+          function stopAutoplay() {
+            clearInterval(autoplayTimer);
           }
 
           function resetAutoplay() {
-            clearInterval(autoplayTimer);
-            autoplayTimer = setInterval(next, 5000);
+            startAutoplay();
           }
 
-          slides.forEach(function(s, i) {
-            s.style.transition = 'none';
-            s.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
-            s.style.zIndex = i === 0 ? '1' : '0';
+          dots.forEach(function(dot) {
+            dot.addEventListener('click', function() {
+              var slideIndex = parseInt(this.getAttribute('data-slide'));
+              goTo(slideIndex);
+              resetAutoplay();
+            });
           });
 
-          document.getElementById('myCarouselNext').addEventListener('click', function() {
-            next();
-          });
-          document.getElementById('myCarouselPrev').addEventListener('click', function() {
-            prev();
-          });
+          var touchStartX = 0;
+          var touchEndX = 0;
+          carousel.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+          }, { passive: true });
+          carousel.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            var diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) { next(); } else { prev(); }
+              resetAutoplay();
+            }
+          }, { passive: true });
 
-          resetAutoplay();
+          startAutoplay();
         })();
         </script>
     </body>
