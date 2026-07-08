@@ -13,6 +13,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/fonts.css" rel="stylesheet">
+        <link href="css/subpages.css?v=2" rel="stylesheet">
     </head>
     <body>
         <!-- Navigation-->
@@ -50,77 +51,72 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="py-5 header-bg">
-            <div class="container px-4 px-lg-5 my-5 pt-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">O nas</h1>
+        <header class="page-hero">
+            <img src="css/images_css/zdj1.webp" alt="Nasza pasieka" class="page-hero__bg">
+            <div class="page-hero__overlay"></div>
+            <div class="container position-relative z-index-2">
+                <div class="page-hero__content">
+                    <h1 class="page-hero__title">O nas</h1>
+                    <p class="page-hero__subtitle">Poznaj historię Pasieki Korona</p>
                 </div>
             </div>
         </header>
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5" style="overflow-x: hidden;">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img1.jpg" class="about" alt="" width="70%">
+                <div class="timeline">
+                    <div class="timeline-item timeline-left reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img1.jpg" alt="Początki">
+                            <h4 class="fw-bold mb-2" style="color: #d4a017;">2016</h4>
+                            <p>Nasza przygoda z pszczołami zaczęła się 1 kwietnia 2016 roku, gdy zafascynowani życiem tych owadów zakupiliśmy pierwsze ule.</p>
+                        </div>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center mt-3">
-                        <p>Nasza przygoda z pszczołami zaczęła się 1 kwietnia 2016 roku, gdy zafascynowani życiem tych owadów zakupiliśmy pierwsze ule.</p>
+                    <div class="timeline-item timeline-right reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img2.jpg" alt="Rozwój">
+                            <p>Po kilku miesiącach zdobywania doświadczenia zwiększyliśmy liczbę rodzin pszczelich i rozpoczęliśmy przygotowania do dalszego rozwoju pasieki.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center">
-                        <p>Po kilku miesiącach zdobywania doświadczenia zwiększyliśmy liczbę rodzin pszczelich i rozpoczęliśmy przygotowania do dalszego rozwoju pasieki.</p>
+                    <div class="timeline-item timeline-left reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img3.jpg" alt="Zbiory miodu">
+                            <p>Gdy zbiory miodu zaczęły przekraczać nasze zapotrzebowanie, zdecydowaliśmy się na sprzedaż bezpośrednią mieszkańcom naszej okolicy.</p>
+                        </div>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img2.jpg" class="about" id="toHide" alt="" width="70%">
+                    <div class="timeline-item timeline-right reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img4.jpg" alt="Pasieka wędrowna">
+                            <h4 class="fw-bold mb-2" style="color: #d4a017;">2018</h4>
+                            <p>W 2018 roku zaczęliśmy przewozić ule, dopasowując się do okresu kwitnienia roślin, aby uzyskać różne odmiany miodów.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img3.jpg" class="about" alt="" width="70%">
+                    <div class="timeline-item timeline-left reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img5.jpg" alt="Pierwsza strona">
+                            <h4 class="fw-bold mb-2" style="color: #d4a017;">2021</h4>
+                            <p>Trzy lata później stworzyliśmy naszą pierwszą stronę internetową aby móc dotrzeć z naszymi produktami do szerszego grona klientów.</p>
+                        </div>
                     </div>
-
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center mt-3">
-                        <p>Gdy zbiory miodu zaczęły przekraczać nasze zapotrzebowanie, zdecydowaliśmy się na sprzedaż bezpośrednią mieszkańcom naszej okolicy.</p>
+                    <div class="timeline-item timeline-right reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img6.jpg" alt="Rozwój systemu">
+                            <p>W kolejnych latach systematycznie powiększaliśmy naszą pasiekę i rozwinęliśmy system pasiek wędrownych.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center">
-                        <p>W 2018 roku zaczęliśmy przewozić ule, dopasowując się do okresu kwitnienia roślin, aby uzyskać różne odmiany miodów.</p>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img4.jpg" class="about" alt="" width="70%">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img5.jpg" id="toHide" class="about" alt="" width="70%">
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center mt-3">
-                        <p>Trzy lata później stworzyliśmy naszą pierwszą stronę internetową aby móc dotrzeć z naszymi produktami do szerszego grona klientów.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center">
-                        <p>W kolejnych latach systematycznie powiększaliśmy naszą pasiekę i rozwinęliśmy system pasiek wędrownych.</p>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img6.jpg" id="toHide" class="about" alt="" width="70%">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="images/photos/img7.jpg" class="about" alt="" width="70%">
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center text-center mt-3">
-                        <p>W 2024 roku powstała nowa wersja strony internetowej, dzięki której zakup naszego miodu i innych produktów pszczelich stał się jeszcze prostszy i przyjemniejszy.</p>
+                    <div class="timeline-item timeline-left reveal">
+                        <div class="timeline-content">
+                            <img src="images/photos/img7.jpg" alt="Nowa strona">
+                            <h4 class="fw-bold mb-2" style="color: #d4a017;">2024</h4>
+                            <p>W 2024 roku powstała nowa wersja strony internetowej, dzięki której zakup naszego miodu i innych produktów pszczelich stał się jeszcze prostszy i przyjemniejszy.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Section-->
         <section class="py-5">
-              <div class="container">
+            <div class="container px-4 px-lg-5">
                 <div class="row justify-content-center">
                   <div class="col-lg-8">
                     <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
