@@ -13,6 +13,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/fonts.css" rel="stylesheet">
+        <link href="css/subpages.css" rel="stylesheet">
         <style>
             .card {
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -24,7 +25,7 @@
     </head>
     <body>
         <!-- Navigation-->
-        <<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/logo.png" alt="Logo" width="120">
@@ -58,10 +59,12 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="py-5 header-bg">
-            <div class="container px-4 px-lg-5 my-5 pt-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Galeria</h1>
+        <header class="page-hero">
+            <img src="css/images_css/zdj2.webp" alt="Zdjęcia z pasieki" class="page-hero__bg">
+            <div class="page-hero__overlay"></div>
+            <div class="container position-relative z-index-2">
+                <div class="page-hero__content">
+                    <h1 class="page-hero__title">Galeria</h1>
                 </div>
             </div>
         </header>
@@ -70,172 +73,172 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall3.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall3.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall14.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall14.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall7.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall7.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall9.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall9.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall10.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall10.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall16.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall16.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall6.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall6.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall8.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall8.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall13.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall13.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall5.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall5.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall17.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall17.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall4.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall4.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall11.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall11.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall1.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall1.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall2.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall2.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall12.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall12.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall15.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall15.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall18.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall18.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall19.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall19.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall20.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall20.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall21.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall21.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall22.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall22.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall23.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall23.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall24.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall24.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall25.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall25.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall26.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall26.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall29.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall29.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall27.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall27.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall28.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall28.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall30.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall30.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall31.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall31.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall33.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall33.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
-                            <img class="card-img-top card-img-bottom" src="images/photos/gall34.webp" alt="..." onclick="openModal(this)">
+                        <div class="card gallery-card">
+                            <img class="card-img-top card-img-bottom" src="images/photos/gall34.webp" alt="..." onclick="openFullscreenImage(this.src)">
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card">
+                        <div class="card gallery-card reveal">
                             <img class="card-img-top card-img-bottom" src="images/photos/gall32.webp" alt="..." onclick="openModal(this)">
                         </div>
                     </div>
